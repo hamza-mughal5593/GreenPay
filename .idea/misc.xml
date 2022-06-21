@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Test/GreenPay/app/src/main/res/drawable/btn_bg.xml" value="0.247" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/drawable/btn_bg_green.xml" value="0.247" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.247" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/drawable/toolbar_dropshadow.xml" value="0.247" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_login.xml" value="0.3009833262077811" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_login_main.xml" value="0.3009833262077811" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_main.xml" value="0.3009833262077811" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_on_board.xml" value="0.36666666666666664" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_signup.xml" value="0.3009833262077811" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_splash.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/border_shadow.xml" value="0.2" />
         <entry key="app/src/main/res/drawable/button_empty.xml" value="0.21512027491408936" />
         <entry key="app/src/main/res/drawable/button_filled.xml" value="0.21512027491408936" />

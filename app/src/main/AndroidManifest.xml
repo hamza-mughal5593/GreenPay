@@ -24,14 +24,21 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden|adjustResize">
         <activity
-            android:screenOrientation="portrait"
-            android:name=".activities.Boarding.OnBoard"
+            android:name=".activities.NewCode.SignupActivity"
             android:exported="false" />
-
         <activity
-            android:screenOrientation="portrait"
+            android:name=".activities.NewCode.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewCode.LoginMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Boarding.OnBoard"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activities.SplashActivity"
-             >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,9 +47,7 @@
         </activity>
         <activity
             android:name=".activities.ListActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.GreenCardActivity"
             android:exported="false"

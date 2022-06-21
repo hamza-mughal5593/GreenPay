@@ -6,48 +6,45 @@ import android.os.Bundle
 import com.machineries_pk.mrk.R
 import android.os.CountDownTimer
 import com.machineries_pk.mrk.activities.Boarding.OnBoard
+import com.machineries_pk.mrk.activities.NewCode.LoginMainActivity
+import com.machineries_pk.mrk.databinding.ActivitySplashBinding
 import io.paperdb.Paper
 
 
 class SplashActivity : AppCompatActivity() {
+    lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
-//        val list = Array<Int>(4)
+        binding= ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
-//        getTotalEfficiency()
+        binding.start.setOnClickListener {
+            val intent = Intent(this@SplashActivity, LoginMainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
 
-//        val skillCount = readLine()!!.trim().toInt()
+//        object : CountDownTimer(3000, 1000) {
+//            override fun onTick(millisUntilFinished: Long) {
+//                //here you can have your logic to set text to edittext
+//            }
 //
-//        val skill = Array<Int>(skillCount, { 0 })
-//        for (i in 0 until skillCount) {
-//            val skillItem = readLine()!!.trim().toInt()
-//            skill[i] = skillItem
-//        }
+//            override fun onFinish() {
+//                if (Paper.book().read("first",true)){
+//                    Paper.book().write("first",false)
+//                    val intent = Intent(this@SplashActivity, OnBoard::class.java)
+//                    startActivity(intent)
+//                    finish()
+//                }else{
+//                    val intent = Intent(this@SplashActivity, ListActivity::class.java)
+//                    startActivity(intent)
+//                    finish()
+//                }
 //
-//        val result = getTotalEfficiency(skill)
-//
-        object : CountDownTimer(3000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                //here you can have your logic to set text to edittext
-            }
-
-            override fun onFinish() {
-                if (Paper.book().read("first",true)){
-                    Paper.book().write("first",false)
-                    val intent = Intent(this@SplashActivity, OnBoard::class.java)
-                    startActivity(intent)
-                    finish()
-                }else{
-                    val intent = Intent(this@SplashActivity, ListActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                }
-
-            }
-        }.start()
+//            }
+//        }.start()
 
     }
 

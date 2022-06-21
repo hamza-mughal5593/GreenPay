@@ -14,5 +14,9 @@
 
     <color name="light_green">#d9f5e8</color>
     <color name="grey_text">#85879b</color>
+    <color name="bluecolor">#3957D0</color>
+    <color name="greencolor">#31BA96</color>
+    <color name="graytext">#7A869A</color>
+    <color name="bordercolor">#DFE1E6</color>
 
 </resources>
