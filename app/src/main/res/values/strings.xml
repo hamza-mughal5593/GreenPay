@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Greenpay Carbon Calculator</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save_and_create_green_card">Order my <b>Forest Card</b></string>
+    <string name="how_big_is_your_home_m3_person">How big is your <b>home</b>? (m<sup>3</sup>/person)</string>
+    <string name="how_much_do_you_drive_km_year">How much do you <b>drive</b>? (km/year)</string>
+    <string name="how_much_do_your_fly_hours_year">How much do your <b>fly</b>? (hours/year)</string>
+    <string name="how_is_your_diet">How is your <b>diet</b>?</string>
+    <string name="do_you_shop_a_lot">Do you <b>shop</b> a lot?</string>
+    <string name="list_emptu">Press “+” to add entry and start calculating your Carbon Emissions.</string>
+</resources>

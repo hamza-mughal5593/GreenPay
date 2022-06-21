@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/remove_nav"
+            android:icon="@drawable/export_side"
+            android:title="Export as Excel" />
+
+        <item
+            android:id="@+id/nav_priv"
+            android:icon="@drawable/priv_side"
+            android:title="Privacy Policy" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/share_side"
+            android:title="Share App" />
+        <item
+            android:id="@+id/nav_rate"
+            android:icon="@drawable/rate_side"
+            android:title="Rate Us" />
+
+    </group>
+
+
+
+
+
+
+
+
+
+
+</menu>

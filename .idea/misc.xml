@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/border_shadow.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/button_empty.xml" value="0.21512027491408936" />
+        <entry key="app/src/main/res/drawable/button_filled.xml" value="0.21512027491408936" />
+        <entry key="app/src/main/res/drawable/card_main.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/card_text_bg.xml" value="0.2093645484949833" />
+        <entry key="app/src/main/res/drawable/corner.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/custom_thumb.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/edittext_bg.xml" value="0.21512027491408936" />
+        <entry key="app/src/main/res/drawable/home_bottom_bg.xml" value="0.21512027491408936" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.21512027491408936" />
+        <entry key="app/src/main/res/drawable/ic_round_add_24.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/rounded_border_blue.xml" value="0.25462962962962965" />
+        <entry key="app/src/main/res/drawable/search_bg.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/seekbar_progress.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/seekbar_style.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_employee_selection.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_green_card.xml" value="0.2065972222222222" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_list.xml" value="0.18963210702341138" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.18981481481481483" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.20446735395189003" />
+        <entry key="app/src/main/res/layout/activity_on_board.xml" value="0.19155405405405404" />
+        <entry key="app/src/main/res/layout/activity_onboard.xml" value="0.19155405405405404" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.2065972222222222" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19155405405405404" />
+        <entry key="app/src/main/res/layout/check_internet_dialog.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/item_employee.xml" value="0.19899665551839466" />
+        <entry key="app/src/main/res/layout/loading_dialog.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.19155405405405404" />
+        <entry key="app/src/main/res/layout/save_dialog.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/slide_layout_2.xml" value="0.19155405405405404" />
+        <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.19155405405405404" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.20101351351351351" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
