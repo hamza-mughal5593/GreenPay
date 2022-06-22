@@ -48,8 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.diet.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-//                progressChangedValue = progress
-//                progressChangedValue.toDouble()
+
                 total_diet_co = (progress / 10.0)
                 total_diet_tree = if (progress < 9)
                     1
@@ -57,14 +56,6 @@ class MainActivity : AppCompatActivity() {
                     2
                 if (progress == 0)
                     total_diet_tree = 0
-
-//                total_diet_co = new
-//                Toast.makeText(
-//                    this@MainActivity, "Seek bar progress is :$new",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//                Log.e("progress", "Seek bar progress is :$new" )
-
 
                 final_tree =
                     total_tree + total_diet_tree + total_home_tree + total_drive_tree + total_fly_tree + total_stop_tree
@@ -95,8 +86,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.home.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-//                progressChangedValue = progress
-//                progressChangedValue.toDouble()
+
                 total_home_co = (progress / 10.0)
                 total_home_tree = when {
                     progress < 6 -> 1
@@ -109,26 +99,18 @@ class MainActivity : AppCompatActivity() {
                 if (progress == 0)
                     total_home_tree = 0
 
-//                diet_co = new
 
 
                 final_tree =
                     total_tree + total_diet_tree + total_home_tree + total_drive_tree + total_fly_tree + total_stop_tree
-//                binding.totalTree.text = "total tree: $total_tree"
-//                Toast.makeText(
-//                    this@MainActivity, "Seek bar progress is :$new",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//                Log.e("progress", "Seek bar progress is :$new" )
+
 
                 if (progress > 10)
                     total_home_co -= 0.7
 
-//                total_home_co = round(total_home_co,1)
                 final_co =
                     total_co + total_diet_co + total_home_co + total_drive_co + total_fly_co + total_stop_co
                 final_co = round(final_co, 1)
-//                binding.totalCo.text = "total tree: $total_co"
                 binding.finalText.text =
                     "My annual Co2 emission is ($final_co T), $final_tree mangroves trees can sequester Co2 in 20 years"
             }
@@ -145,8 +127,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.drive.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-//                progressChangedValue = progress
-//                progressChangedValue.toDouble()
+
                 total_drive_co = (progress / 10.0)
                 total_drive_tree = when {
                     progress < 5 -> 1
@@ -173,14 +154,7 @@ class MainActivity : AppCompatActivity() {
 
                 final_tree =
                     total_tree + total_diet_tree + total_home_tree + total_drive_tree + total_fly_tree + total_stop_tree
-//                binding.totalTree.text = "total tree: $total_tree"
-//                Toast.makeText(
-//                    this@MainActivity, "Seek bar progress is :$new",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//                Log.e("progress", "Seek bar progress is :$new" )
 
-//                total_drive_co = round(total_drive_co,1)
                 final_co =
                     total_co + total_diet_co + total_home_co + total_drive_co + total_fly_co + total_stop_co
                 final_co = round(final_co, 1)
@@ -201,8 +175,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.fly.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-//                progressChangedValue = progress
-//                progressChangedValue.toDouble()
                 total_fly_co = (progress / 10.0)
 
                 total_fly_tree = when {
@@ -229,22 +201,14 @@ class MainActivity : AppCompatActivity() {
                 if (progress == 0) {
                     total_fly_tree = 0
                 }
-//                diet_co = new
 
 
                 final_tree =
                     total_tree + total_diet_tree + total_home_tree + total_drive_tree + total_fly_tree + total_stop_tree
-//                binding.totalTree.text = "total tree: $total_tree"
-//                Toast.makeText(
-//                    this@MainActivity, "Seek bar progress is :$new",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//                Log.e("progress", "Seek bar progress is :$new" )
-//                total_fly_co = round(total_fly_co,1)
+
                 final_co =
                     total_co + total_diet_co + total_home_co + total_drive_co + total_fly_co + total_stop_co
                 final_co = round(final_co, 1)
-//                binding.totalCo.text = "total tree: $total_co"
 
                 binding.finalText.text =
                     "My annual Co2 emission is ($final_co T), $final_tree mangroves trees can sequester Co2 in 20 years"
@@ -263,18 +227,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.shop.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-//                progressChangedValue = progress
-//                progressChangedValue.toDouble()
+
                 total_stop_tree = 0
                 total_stop_co = (progress / 10.0)
-//                diet_tree = when {
-//                    progress>=6 -> 1
-//                    progress>=12 -> 2
-//                    progress>=18 -> 3
-//                    progress>=24 -> 4
-//                    progress>=30 -> 5
-//                    else -> 6
-//                }
+
 
                 if (progress < 6) {
                     total_stop_tree = 1
@@ -292,26 +248,16 @@ class MainActivity : AppCompatActivity() {
                 if (progress == 0) {
                     total_stop_tree = 0
                 }
-//                diet_co = new
 
 
                 final_tree =
                     total_tree + total_diet_tree + total_home_tree + total_drive_tree + total_fly_tree + total_stop_tree
-//                binding.totalTree.text = "total tree: $total_tree"
-//                Toast.makeText(
-//                    this@MainActivity, "Seek bar progress is :$new",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//                Log.e("progress", "Seek bar progress is :$new" )
-
                 if (progress > 10)
                     total_stop_co -= 1.1
 
-//                total_stop_co = round(total_stop_co,1)
                 final_co =
                     total_co + total_diet_co + total_home_co + total_drive_co + total_fly_co + total_stop_co
                 final_co = round(final_co, 1)
-//                binding.totalCo.text = "total tree: $total_co"
 
                 binding.finalText.text =
                     "My annual Co2 emission is ($final_co T), $final_tree mangroves trees can sequester Co2 in 20 years"
@@ -328,22 +274,6 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.saveBtn.setOnClickListener {
-//    val  customDialog = Dialog(this)
-//    val inflater = LayoutInflater.from(this)
-//    val mView: View = inflater.inflate(R.layout.save_dialog, null)
-//    customDialog.setCancelable(false)
-//    customDialog.setContentView(mView)
-//
-//
-//    val cancl_btn = customDialog.findViewById<TextView>(R.id.cancl_btn);
-//
-//    cancl_btn.setOnClickListener {
-//        customDialog.dismiss()
-//    }
-//
-//    if (!customDialog.isShowing && !isFinishing) {
-//        customDialog.show()
-//    }
 
             Paper.book().write("final_tree", final_tree.toString())
             Paper.book().write("final_co", final_co.toString())

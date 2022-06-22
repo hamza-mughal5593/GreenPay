@@ -97,7 +97,6 @@
                 <!--                    android:background="@android:color/transparent"/>-->
             </LinearLayout>
             <View
-                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/bordercolor"/>
@@ -124,6 +123,8 @@
                     android:layout_height="wrap_content"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp"
+                    app:passwordToggleDrawable="@drawable/show_password_selector"
+
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -138,7 +139,6 @@ android:textColor="@color/black"
 
             </LinearLayout>
             <View
-                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/bordercolor"/>
@@ -150,9 +150,9 @@ android:textColor="@color/black"
             android:text="Forgot Password?"
             android:textColor="@color/bluecolor"
             android:fontFamily="@font/font_reg"
-            android:textSize="@dimen/_14sdp"
+            android:textSize="@dimen/_12sdp"
             android:layout_gravity="end"
-            android:layout_marginTop="@dimen/_5sdp"/>
+            android:layout_marginTop="@dimen/_10sdp"/>
 
     </LinearLayout>
 </LinearLayout>
@@ -169,6 +169,7 @@ android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg"
+        android:textSize="@dimen/_11sdp"
         android:fontFamily="@font/font_reg"
         android:gravity="center"
         android:paddingTop="@dimen/_10sdp"
@@ -184,7 +185,7 @@ android:id="@+id/login_btn"
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+android:textSize="@dimen/_9sdp"
             android:fontFamily="@font/font_reg"
             android:gravity="center"
             android:paddingTop="@dimen/_10sdp"
@@ -196,7 +197,7 @@ android:id="@+id/login_btn"
             android:id="@+id/signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:textSize="@dimen/_9sdp"
             android:fontFamily="@font/font_reg"
             android:gravity="center"
             android:paddingTop="@dimen/_10sdp"
