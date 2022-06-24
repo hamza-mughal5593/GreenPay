@@ -10,10 +10,14 @@
         <entry key="..\:/Test/GreenPay/app/src/main/res/drawable/seekbar_style.xml" value="0.247" />
         <entry key="..\:/Test/GreenPay/app/src/main/res/drawable/show_password_selector.xml" value="0.247" />
         <entry key="..\:/Test/GreenPay/app/src/main/res/drawable/toolbar_dropshadow.xml" value="0.247" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/drawable/upper_curv_bg.xml" value="0.247" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_calculate_result.xml" value="0.3009833262077811" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_green_card.xml" value="0.3009833262077811" />
         <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_login.xml" value="0.3009833262077811" />
         <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_login_main.xml" value="0.3009833262077811" />
         <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_on_board.xml" value="0.36666666666666664" />
+        <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_profile.xml" value="0.3009833262077811" />
         <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_signup.xml" value="0.3009833262077811" />
         <entry key="..\:/Test/GreenPay/app/src/main/res/layout/activity_splash.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/border_shadow.xml" value="0.2" />

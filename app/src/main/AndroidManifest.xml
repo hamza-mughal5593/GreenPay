@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.machineries_pk.mrk">
+    package="com.machineries_pk.mrk" >
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,7 +22,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MRK"
         android:usesCleartextTraffic="true"
-        android:windowSoftInputMode="stateHidden|adjustResize">
+        android:windowSoftInputMode="stateHidden|adjustResize" >
+        <activity
+            android:name=".activities.NewCode.CalculateResultActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.NewCode.SignupActivity"
             android:exported="false" />
@@ -38,7 +41,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.SplashActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

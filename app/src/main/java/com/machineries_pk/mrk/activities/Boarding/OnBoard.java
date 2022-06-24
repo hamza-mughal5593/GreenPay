@@ -22,7 +22,6 @@ public class OnBoard extends AppCompatActivity {
     SliderAdapter sliderAdapter;
     TextView[] dots;
     TextView letsGetStarted;
-    Animation animation;
     int currentPos;
     TextView text_skip;
 

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.appcompat.app.AppCompatActivity
+import com.machineries_pk.mrk.activities.NewCode.CalculateResultActivity
 import com.machineries_pk.mrk.databinding.ActivityMainBinding
 import io.paperdb.Paper
 
@@ -273,13 +274,13 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-        binding.saveBtn.setOnClickListener {
+        binding.calculate.setOnClickListener {
 
             Paper.book().write("final_tree", final_tree.toString())
             Paper.book().write("final_co", final_co.toString())
             Paper.book().write("final_data", binding.finalText.text.toString())
 
-            val intent = Intent(this, ProfileActivity::class.java)
+            val intent = Intent(this, CalculateResultActivity::class.java)
             startActivity(intent)
         }
 
