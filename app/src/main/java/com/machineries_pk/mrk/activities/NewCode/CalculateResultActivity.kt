@@ -28,17 +28,17 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(p0: GoogleMap) {
         mMap = p0
-        p0.getUiSettings()
+        p0.uiSettings
         // Add a marker in Sydney and move the camera
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(0.0, 0.0)
+        val sydney = LatLng(Paper.book().read("latitude", 0.0), Paper.book().read("longitude", 0.0))
 //        mMap.addMarker(new MarkerOptions()
 //                .position(sydney)
 //                .title("Marker in Sydney"));
         //        mMap.addMarker(new MarkerOptions()
 //                .position(sydney)
 //                .title("Marker in Sydney"));
-        mMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 18f))
+        mMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 8f))
 
 
 
