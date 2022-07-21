@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
     var total_co = 2.6
 
 
-    var final_tree: Int = 0
-    var final_co = 0.0
+    var final_tree: Int = 5
+    var final_co = 2.6
 
 
     var total_driving = 0
