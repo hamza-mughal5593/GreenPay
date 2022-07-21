@@ -1,63 +1,52 @@
 package com.machineries_pk.mrk.activities.NewCode
 
+import android.app.Activity
 import android.app.Dialog
+import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
+import android.location.Address
+import android.location.Geocoder
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.Window
+import android.view.inputmethod.InputMethodManager
+import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.*
+import com.android.volley.toolbox.StringRequest
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.FutureTarget
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import io.paperdb.Paper
-import android.content.Context
-import android.content.Intent
-
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
-
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import android.graphics.drawable.Drawable
-
-import android.graphics.PorterDuff
-
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-
-import android.view.LayoutInflater
-import android.view.View
-import android.view.Window
-
-import com.android.volley.*
-import com.android.volley.toolbox.StringRequest
-import com.bumptech.glide.Glide
 import com.machineries_pk.mrk.R
 import com.machineries_pk.mrk.activities.MainActivity
 import com.machineries_pk.mrk.activities.Utils.MySingleton
 import com.machineries_pk.mrk.activities.Utils.Utils.Companion.BASE_URL
+import com.machineries_pk.mrk.databinding.ActivityCalculateResultBinding
+import de.hdodenhof.circleimageview.CircleImageView
+import io.paperdb.Paper
 import org.json.JSONException
 import org.json.JSONObject
-import android.telephony.TelephonyManager
-import android.util.Log
-import android.widget.*
-import java.lang.Exception
-import java.util.*
-import kotlin.collections.ArrayList
-
-import android.widget.AdapterView.OnItemClickListener
-import android.app.Activity
-import android.location.Address
-import android.view.inputmethod.InputMethodManager
-import com.google.android.gms.maps.model.Marker
-import android.widget.Toast
-
-import android.location.Geocoder
-import android.os.Handler
-import android.os.Looper
-import com.machineries_pk.mrk.databinding.ActivityCalculateResultBinding
 import java.io.IOException
-import android.os.AsyncTask
-import com.bumptech.glide.request.FutureTarget
+import java.util.*
+import java.util.concurrent.CompletableFuture
 
 
 class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
@@ -162,8 +151,8 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
         var data = dialog.findViewById<TextView>(R.id.data)
 
 
-            exit.text = "Yes"
-            data.text = "Are you sure you want to re-calculate your carbon footprints?"
+        exit.text = "Yes"
+        data.text = "Are you sure you want to re-calculate your carbon footprints?"
 
 
 
@@ -180,13 +169,9 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
             dialog.dismiss()
 
 
-
-
         }
 
     }
-
-
 
 
     fun backbtn(logout: Boolean) {
@@ -246,6 +231,7 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
             var data = lifestle.split(",")
             binding.totalTree.text = data[0]
             binding.totalCarbon.text = data[1]
+            binding.totalDriving.text = data[2]
             var total_carbon = data[1].toFloat()
 
             when (total_carbon) {
@@ -342,7 +328,8 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
     private fun allusers() {
 
 
-        val RegistrationRequest: StringRequest = object : StringRequest(
+        val RegistrationRequest: StringRequest = @RequiresApi(Build.VERSION_CODES.N)
+        object : StringRequest(
             Method.POST,
             "http://www.greensave.co/",
             Response.Listener
@@ -434,15 +421,10 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
                         for (i in 0 until alluser.size) {
 
                             // below line is use to add marker to each location of our array list.
-
-
                             Log.e(
                                 "121212",
                                 "allusers: ${alluser.get(i).lat.toDouble()}      ${alluser.get(i).lng.toDouble()}"
                             )
-
-
-
                             marker[i] = mMap?.addMarker(
 //                            mMap?.addMarker(
                                 MarkerOptions()
@@ -554,6 +536,9 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
         p0.uiSettings.setAllGesturesEnabled(true)
     }
 
+    var bitma: Bitmap? = null
+
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun getMarkerBitmapFromView(img: String, lifestyle: String): Bitmap? {
 
         try {
@@ -562,85 +547,173 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
                     R.layout.view_custom_marker,
                     null
                 )
-            val markerImageView: ImageView =
-                customMarkerView.findViewById(R.id.profile_image) as ImageView
+            val markerImageView: CircleImageView =
+                customMarkerView.findViewById(R.id.profile_image) as CircleImageView
             val level: TextView = customMarkerView.findViewById(R.id.level) as TextView
 
-            Log.e("1211112", "getMarkerBitmapFromView: ${BASE_URL + img}" )
+            Log.e("1211112", "getMarkerBitmapFromView: ${BASE_URL + img}")
 
 
-            Handler(Looper.getMainLooper()).postDelayed({
-                Glide.with(this).load(BASE_URL + img).placeholder(R.drawable.profile_picture)
-                    .into(markerImageView)
+            val completableFuture: CompletableFuture<Any> = CompletableFuture()
+            object : Thread() {
+                @RequiresApi(Build.VERSION_CODES.N)
+                override fun run() {
 
-                    }, 70)
-
-            AsyncTask.execute {
-                var futureBitmap:FutureTarget<Bitmap> = Glide.with(applicationContext)
-                    .asBitmap().load(BASE_URL + img).submit()
-//                    .load(yourURL))
-//                .submit();
-
-                var bitma = futureBitmap.get()
-                markerImageView.setImageBitmap(bitma)
-            }
+                    try {
+                        if (img.isNotEmpty()) {
 
 
+                        var futureBitmap: FutureTarget<Bitmap> = Glide.with(applicationContext)
+                            .asBitmap().load(BASE_URL + img).submit()
 
-            if (lifestyle.isNotEmpty()) {
-                var data = lifestyle.split(",")
-                var total_carbon = data[1].toFloat()
+                        bitma = futureBitmap.get()
 
-                when (total_carbon) {
-                    in 2.6..6.0 -> {
-                        pro_ranking = "1"
+//                        runOnUiThread {
+//                            val imageView = ImageView(this@CalculateResultActivity)
+//                            imageView.layoutParams =
+//                                LinearLayout.LayoutParams(160, 160) // value is in pixels
+
+                        if (bitma != null)
+                            markerImageView.setImageBitmap(bitma)
+                        else {
+                            val imgResId = R.drawable.profile_picture
+                            markerImageView.setImageResource(imgResId)
+                        }
+                        }else{
+                            val imgResId = R.drawable.profile_picture
+                            markerImageView.setImageResource(imgResId)
+                        }
+                        // Add ImageView to LinearLayout
+//                            markerImageView.addView(imageView)
+
+
+                        if (lifestyle.isNotEmpty()) {
+                            var data = lifestyle.split(",")
+                            var total_carbon = data[1].toFloat()
+
+                            when (total_carbon) {
+                                in 2.6..6.0 -> {
+                                    pro_ranking = "1"
+                                }
+                                in 6.1..9.6 -> {
+                                    pro_ranking = "2"
+                                }
+                                in 9.6..13.0 -> {
+                                    pro_ranking = "3"
+                                }
+                                in 13.1..16.5 -> {
+                                    pro_ranking = "4"
+                                }
+                                in 16.6..20.0 -> {
+                                    pro_ranking = "5"
+                                }
+                                in 20.1..23.5 -> {
+                                    pro_ranking = "6"
+                                }
+                                in 23.6..27.0 -> {
+                                    pro_ranking = "7"
+                                }
+                            }
+
+
+                        }
+
+
+                        level.text = pro_ranking
+
+
+
+                        customMarkerView.measure(
+                            View.MeasureSpec.UNSPECIFIED,
+                            View.MeasureSpec.UNSPECIFIED
+                        )
+                        customMarkerView.layout(
+                            0,
+                            0,
+                            customMarkerView.measuredWidth,
+                            customMarkerView.measuredHeight
+                        )
+                        customMarkerView.buildDrawingCache()
+                        val returnedBitmap = Bitmap.createBitmap(
+                            customMarkerView.measuredWidth, customMarkerView.measuredHeight,
+                            Bitmap.Config.ARGB_8888
+                        )
+                        val canvas = Canvas(returnedBitmap)
+                        canvas.drawColor(Color.WHITE, PorterDuff.Mode.SRC_IN)
+                        val drawable: Drawable = customMarkerView.background
+                        if (drawable != null) drawable.draw(canvas)
+                        customMarkerView.draw(canvas)
+//                        return returnedBitmap
+
+
+                        completableFuture.complete(returnedBitmap)
+
+//                        }
+//                        sleep(5000)
+                    } catch (e: InterruptedException) {
+                        e.printStackTrace()
                     }
-                    in 6.1..9.6 -> {
-                        pro_ranking = "2"
-                    }
-                    in 9.6..13.0 -> {
-                        pro_ranking = "3"
-                    }
-                    in 13.1..16.5 -> {
-                        pro_ranking = "4"
-                    }
-                    in 16.6..20.0 -> {
-                        pro_ranking = "5"
-                    }
-                    in 20.1..23.5 -> {
-                        pro_ranking = "6"
-                    }
-                    in 23.6..27.0 -> {
-                        pro_ranking = "7"
-                    }
+
                 }
+            }.start()
+            val resultFromThread = completableFuture.get()
 
 
-            }
-
-
-            level.text = pro_ranking
-
-
-
-            customMarkerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
-            customMarkerView.layout(
-                0,
-                0,
-                customMarkerView.measuredWidth,
-                customMarkerView.measuredHeight
-            )
-            customMarkerView.buildDrawingCache()
-            val returnedBitmap = Bitmap.createBitmap(
-                customMarkerView.measuredWidth, customMarkerView.measuredHeight,
-                Bitmap.Config.ARGB_8888
-            )
-            val canvas = Canvas(returnedBitmap)
-            canvas.drawColor(Color.WHITE, PorterDuff.Mode.SRC_IN)
-            val drawable: Drawable = customMarkerView.background
-            if (drawable != null) drawable.draw(canvas)
-            customMarkerView.draw(canvas)
-            return returnedBitmap
+            return resultFromThread as Bitmap
+//            if (lifestyle.isNotEmpty()) {
+//                var data = lifestyle.split(",")
+//                var total_carbon = data[1].toFloat()
+//
+//                when (total_carbon) {
+//                    in 2.6..6.0 -> {
+//                        pro_ranking = "1"
+//                    }
+//                    in 6.1..9.6 -> {
+//                        pro_ranking = "2"
+//                    }
+//                    in 9.6..13.0 -> {
+//                        pro_ranking = "3"
+//                    }
+//                    in 13.1..16.5 -> {
+//                        pro_ranking = "4"
+//                    }
+//                    in 16.6..20.0 -> {
+//                        pro_ranking = "5"
+//                    }
+//                    in 20.1..23.5 -> {
+//                        pro_ranking = "6"
+//                    }
+//                    in 23.6..27.0 -> {
+//                        pro_ranking = "7"
+//                    }
+//                }
+//
+//
+//            }
+//
+//
+//            level.text = pro_ranking
+//
+//
+//
+//            customMarkerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+//            customMarkerView.layout(
+//                0,
+//                0,
+//                customMarkerView.measuredWidth,
+//                customMarkerView.measuredHeight
+//            )
+//            customMarkerView.buildDrawingCache()
+//            val returnedBitmap = Bitmap.createBitmap(
+//                customMarkerView.measuredWidth, customMarkerView.measuredHeight,
+//                Bitmap.Config.ARGB_8888
+//            )
+//            val canvas = Canvas(returnedBitmap)
+//            canvas.drawColor(Color.WHITE, PorterDuff.Mode.SRC_IN)
+//            val drawable: Drawable = customMarkerView.background
+//            if (drawable != null) drawable.draw(canvas)
+//            customMarkerView.draw(canvas)
+//            return returnedBitmap
         } catch (e: Exception) {
             Log.e("bitmapp", "getMarkerBitmapFromView: ${e.message}")
             return null

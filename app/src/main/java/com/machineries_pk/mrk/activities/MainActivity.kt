@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
     var final_tree: Int = 0
     var final_co = 0.0
 
+
+    var total_driving = 0
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -166,6 +168,8 @@ class MainActivity : AppCompatActivity() {
                     total_drive_tree = 0
 //                diet_co = new
 
+                total_driving = 3333 * total_drive_tree
+
 
                 final_tree =
                     total_tree + total_diet_tree + total_home_tree + total_drive_tree + total_fly_tree + total_stop_tree
@@ -293,7 +297,7 @@ class MainActivity : AppCompatActivity() {
 //            Paper.book().write("final_tree", final_tree.toString())
 //            Paper.book().write("final_co", final_co.toString())
 //            Paper.book().write("final_data", binding.finalText.text.toString())
-val lifestyle = "$final_tree,$final_co"
+val lifestyle = "$final_tree,$final_co,$total_driving"
             Paper.book().write("lifestyle",lifestyle)
 
 

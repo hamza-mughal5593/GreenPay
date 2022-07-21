@@ -52,9 +52,10 @@ class SignupActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         "Select Account Type", "Green Gift Card",
         "GreenKeeper Membership"
     )
-var accounttype = 0
+    var accounttype = 0
 
-    var  profile_img:String = ""
+    var profile_img: String = ""
+    var profile_img_base: String = "data:image/png;base64,"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
@@ -63,23 +64,26 @@ var accounttype = 0
         binding.signupBtn.setOnClickListener {
 
 
-            if (binding.etname.text.toString().isNotEmpty() && binding.etEmail.text.toString().isNotEmpty() && binding.etPassword.text.toString()
-                    .isNotEmpty() && accounttype!=0 && profile_img.isNotEmpty()){
+            if (binding.etname.text.toString().isNotEmpty() && binding.etEmail.text.toString()
+                    .isNotEmpty() && binding.etPassword.text.toString()
+                    .isNotEmpty() && accounttype != 0
+            ) {
 
-                        if (isValidEmail(binding.etEmail.text.toString())){
-
-            signup()
-                        }
-                else{
-                            Toast.makeText(
-                                this,
-                                "Please enter valid Email Address",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                if (isValidEmail(binding.etEmail.text.toString())) {
+                    if (profile_img.isNotEmpty())
+                        profile_img = ""
+                    profile_img_base=""
+                    signup()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Please enter valid Email Address",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
 
-            }else{
+            } else {
                 Toast.makeText(
                     this,
                     "Please fill all the fields",
@@ -203,15 +207,15 @@ var accounttype = 0
             override fun getParams(): MutableMap<String, String> {
                 val header: MutableMap<String, String> = HashMap()
 
-                header["do"]= "add_user"
-                header["apikey"]= "dwamsoft12345"
-                header["name"]= binding.etname.text.toString()
-                header["email"]= binding.etEmail.text.toString()
-                header["password"]=binding.etPassword.text.toString()
-                header["account_type"]=courses[accounttype].toString()
-                header["image"]= "data:image/png;base64,$profile_img"
-                header["lat"]= Paper.book().read("latitude", 0.0).toString()
-                header["lng"]=Paper.book().read("longitude", 0.0).toString()
+                header["do"] = "add_user"
+                header["apikey"] = "dwamsoft12345"
+                header["name"] = binding.etname.text.toString()
+                header["email"] = binding.etEmail.text.toString()
+                header["password"] = binding.etPassword.text.toString()
+                header["account_type"] = courses[accounttype].toString()
+                header["image"] = "$profile_img_base$profile_img"
+                header["lat"] = Paper.book().read("latitude", 0.0).toString()
+                header["lng"] = Paper.book().read("longitude", 0.0).toString()
 
                 return header
             }
@@ -241,9 +245,6 @@ var accounttype = 0
     }
 
 
-
-
-
     override fun onItemSelected(
         parent: AdapterView<*>?,
         view: View, position: Int,
@@ -252,7 +253,7 @@ var accounttype = 0
         // make toastof name of course
         // which is selected in spinner
 
-        accounttype  = position
+        accounttype = position
 //        Toast.makeText(
 //            applicationContext,
 //            courses[position],
@@ -289,14 +290,14 @@ var accounttype = 0
                         var bitmap = BitmapFactory.decodeFile(filePath, bmOptions)
                         bitmap = Bitmap.createScaledBitmap(
                             bitmap!!,
-                            bitmap.width/2,
-                            bitmap.height/2,
+                            bitmap.width / 2,
+                            bitmap.height / 2,
                             true
                         )
 
                         val byteArrayOutputStream = ByteArrayOutputStream()
                         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
-                        var  byteArray:ByteArray = byteArrayOutputStream.toByteArray()
+                        var byteArray: ByteArray = byteArrayOutputStream.toByteArray()
                         profile_img = Base64.encodeToString(byteArray, Base64.DEFAULT)
 
 //                        mPaths.add(filePath)
