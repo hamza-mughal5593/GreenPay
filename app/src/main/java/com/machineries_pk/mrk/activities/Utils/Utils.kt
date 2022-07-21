@@ -6,6 +6,10 @@ import android.provider.MediaStore
 
 class Utils {
     companion object{
+
+
+        val BASE_URL="https://www.greensave.co/"
+
         fun addImageToGallery(filePath: String?, context: Context) {
             val values = ContentValues()
             values.put(MediaStore.Images.Media.DATE_TAKEN, System.currentTimeMillis())

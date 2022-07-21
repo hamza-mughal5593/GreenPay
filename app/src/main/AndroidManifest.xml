@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.machineries_pk.mrk" >
-
+    package="com.machineries_pk.mrk">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -25,31 +24,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MRK"
         android:usesCleartextTraffic="true"
-        android:windowSoftInputMode="stateHidden|adjustResize" >
+        android:windowSoftInputMode="stateHidden|adjustResize">
         <activity
-            android:screenOrientation="portrait"
+            android:name=".activities.NewCode.ForgetPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.NewCode.CalculateResultActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:screenOrientation="portrait"
             android:name=".activities.NewCode.SignupActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:screenOrientation="portrait"
             android:name=".activities.NewCode.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:screenOrientation="portrait"
             android:name=".activities.NewCode.LoginMainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-
             android:name=".activities.Boarding.OnBoard"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.SplashActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

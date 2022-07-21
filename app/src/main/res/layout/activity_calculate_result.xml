@@ -13,7 +13,7 @@
         android:paddingEnd="@dimen/_10sdp">
 
         <ImageView
-            android:id="@+id/back_btn"
+            android:id="@+id/popupmenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -21,9 +21,11 @@
             android:src="@drawable/more_icon" />
 
         <TextView
+
+            android:id="@+id/name_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_13sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
@@ -63,15 +65,27 @@
             android:paddingEnd="@dimen/_15sdp"
             android:paddingBottom="@dimen/_10sdp">
 
-            <EditText
+            <AutoCompleteTextView
                 android:textColor="@color/white"
-                android:imeOptions="actionNone"
-                android:maxLines="1"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
+                android:textColorHint="@color/white"
                 android:hint="Search Asia"
-                android:textColorHint="@color/white" />
+                android:maxLines="1"
+
+                android:id="@+id/autoCompleteTextView1"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:background="@android:color/transparent"
+                android:ems="10" />
+<!--            <EditText-->
+<!--                android:textColor="@color/white"-->
+<!--                android:imeOptions="actionNone"-->
+<!--                android:maxLines="1"-->
+<!--                android:layout_width="@dimen/_100sdp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:hint="Search Asia"-->
+<!--                android:textColorHint="@color/white" />-->
 
             <ImageView
                 android:layout_gravity="center_vertical"
@@ -88,7 +102,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_30sdp"
-            android:layout_marginBottom="-20dp"
+            android:layout_marginBottom="-60dp"
             android:background="@drawable/card_bg">
 
             <LinearLayout
@@ -99,6 +113,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/prog_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="GreenKeeper"
@@ -106,6 +121,7 @@
                     android:textSize="@dimen/_18sdp" />
 
                 <TextView
+                    android:id="@+id/accountype"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="GreenKeeper"
@@ -123,21 +139,44 @@
                     android:textSize="@dimen/_14sdp" />
             </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@drawable/profile_bg">
+                android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_centerHorizontal="true"
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/profile_bg">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profilePic"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:src="@drawable/profile_picture" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/countrycode"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:src="@drawable/profile_picture" />
-            </RelativeLayout>
+                    android:background="@drawable/circle"
+                    android:fontFamily="@font/font_med"
+                    android:gravity="center"
+
+                    android:text="GB"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp" />
+            </LinearLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -149,8 +188,8 @@
             android:layout_marginEnd="@dimen/_5sdp"
             android:background="@drawable/upper_curv_bg"
             android:backgroundTint="@color/bluecolor"
-            android:paddingTop="@dimen/_20sdp"
-            android:paddingBottom="@dimen/_20sdp">
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
 
 
             <LinearLayout
@@ -170,7 +209,7 @@
                     android:textSize="@dimen/_14sdp" />
 
                 <TextView
-                    android:id="@+id/email"
+                    android:id="@+id/totalCarbon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/font_bold"
@@ -204,6 +243,7 @@
                     android:textSize="@dimen/_14sdp" />
 
                 <TextView
+                    android:id="@+id/totalTree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/font_bold"

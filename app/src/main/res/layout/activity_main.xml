@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/graybg"
     android:orientation="vertical"
-    android:padding="@dimen/_5sdp"
     android:weightSum="10"
     tools:context=".activities.MainActivity">
 
@@ -18,33 +17,46 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:id="@+id/tool"
+                <LinearLayout
+                    android:id="@+id/toppp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    >
+                    android:background="@color/white"
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/back_btn"
-                        android:layout_width="wrap_content"
+                        android:padding="@dimen/_2sdp"
+                        android:layout_width="@dimen/_24sdp"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_baseline_arrow_back_24" />
-
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        app:tint="@color/black" />
                     <TextView
+                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/font_semi"
                         android:text="Carbon Calculator"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_16sdp" />
-                </RelativeLayout>
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/font_bold"
+                        android:textSize="@dimen/_14sdp"
+                        android:layout_marginStart="@dimen/_10sdp"/>
 
+                </LinearLayout>
+
+                <View
+                    android:layout_below="@+id/toppp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_10sdp"
+                    android:background="@drawable/toolbar_dropshadow" />
 
                 <RelativeLayout
-                    android:layout_marginTop="@dimen/_60sdp"
-                    android:layout_below="@+id/tool"
+                    android:padding="@dimen/_5sdp"
+
+                    android:layout_marginTop="@dimen/_90sdp"
+                    android:layout_below="@+id/toppp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -138,7 +150,7 @@
                                     android:layout_marginStart="@dimen/_13sdp"
                                     android:text="@string/how_is_your_diet"
                                     android:textColor="@color/black"
-                                    android:textSize="@dimen/_14sdp" />
+                                    android:textSize="@dimen/_12sdp" />
 
                                 <SeekBar
                                     android:id="@+id/diet"
@@ -249,7 +261,7 @@
                                     android:gravity="center_vertical"
                                     android:text="@string/how_big_is_your_home_m3_person"
                                     android:textColor="@color/black"
-                                    android:textSize="@dimen/_13sdp" />
+                                    android:textSize="@dimen/_12sdp" />
 
                                 <SeekBar
                                     android:id="@+id/home"
@@ -363,7 +375,7 @@
                                     android:layout_marginStart="@dimen/_13sdp"
                                     android:text="@string/how_much_do_you_drive_km_year"
                                     android:textColor="@color/black"
-                                    android:textSize="@dimen/_14sdp" />
+                                    android:textSize="@dimen/_12sdp" />
 
                                 <SeekBar
                                     android:id="@+id/drive"
@@ -578,7 +590,7 @@
                                     android:layout_marginStart="@dimen/_13sdp"
                                     android:text="@string/how_much_do_your_fly_hours_year"
                                     android:textColor="@color/black"
-                                    android:textSize="@dimen/_14sdp" />
+                                    android:textSize="@dimen/_12sdp" />
 
                                 <SeekBar
                                     android:id="@+id/fly"
@@ -794,7 +806,7 @@
                                     android:layout_marginStart="@dimen/_13sdp"
                                     android:text="@string/do_you_shop_a_lot"
                                     android:textColor="@color/black"
-                                    android:textSize="@dimen/_14sdp" />
+                                    android:textSize="@dimen/_12sdp" />
 
                                 <SeekBar
                                     android:id="@+id/shop"
@@ -1030,11 +1042,12 @@
                 </RelativeLayout>
 
                 <ImageView
-                    android:layout_alignParentEnd="true"
-                    android:layout_below="@+id/tool"
+                    android:layout_marginTop="@dimen/_40sdp"
                     android:layout_width="@dimen/_100sdp"
                     android:layout_height="@dimen/_150sdp"
-                    android:src="@drawable/person"/>
+                    android:layout_below="@+id/toppp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/person" />
 
             </RelativeLayout>
         </ScrollView>

@@ -9,66 +9,78 @@
 
     <ImageView
         android:layout_width="@dimen/_200sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_80sdp"
         android:src="@drawable/applogo" />
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="@drawable/loginmainbg">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:gravity="center"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:scaleY="1.05"
 
-            <TextView
-                android:fontFamily="@font/font_med"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Make easier sustainable choice!"
-                android:textColor="@color/white" />
+            android:background="@drawable/loginmainbg" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/register"
-                    android:layout_width="@dimen/_80sdp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:background="@drawable/btn_bg_green"
-                    android:fontFamily="@font/font_reg"
-                    android:gravity="center"
-                    android:textSize="@dimen/_11sdp"
-                    android:paddingTop="@dimen/_10sdp"
-                    android:paddingBottom="@dimen/_10sdp"
-                    android:text="Register"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/font_med"
+                    android:text="Make easier sustainable choice!"
                     android:textColor="@color/white" />
 
-                <TextView
-                    android:id="@+id/login"
-                    android:layout_width="@dimen/_80sdp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn_bg"
-                    android:fontFamily="@font/font_reg"
-                    android:gravity="center"
-                    android:textSize="@dimen/_11sdp"
-                    android:paddingTop="@dimen/_10sdp"
-                    android:paddingBottom="@dimen/_10sdp"
-                    android:text="Login"
-                    android:textColor="@color/white" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/register"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/btn_bg_green"
+                        android:fontFamily="@font/font_reg"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:text="Register"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <TextView
+                        android:id="@+id/login"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_bg"
+                        android:fontFamily="@font/font_reg"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:text="Login"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sdp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
+
+        </RelativeLayout>
 
     </RelativeLayout>
 </LinearLayout>
