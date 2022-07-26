@@ -68,7 +68,7 @@
             <AutoCompleteTextView
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:hint="Search Asia"
+                android:hint="Search Map"
                 android:maxLines="1"
 
                 android:id="@+id/autoCompleteTextView1"
@@ -188,18 +188,20 @@
             android:layout_marginEnd="@dimen/_5sdp"
             android:background="@drawable/upper_curv_bg"
             android:backgroundTint="@color/bluecolor"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
             android:paddingTop="@dimen/_10sdp"
             android:paddingBottom="@dimen/_10sdp">
 
 
             <LinearLayout
-                android:id="@+id/top"
-                android:layout_width="match_parent"
+                android:id="@+id/miannn"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -207,86 +209,102 @@
                     android:text="My carbon footprint "
                     android:textColor="@color/white"
                     android:textSize="@dimen/_14sdp" />
-
                 <TextView
-                    android:id="@+id/totalCarbon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/font_bold"
-                    android:text="13286"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_18sdp" />
-
-                <TextView
-                    android:id="@+id/phone"
+                    android:layout_marginTop="@dimen/_3sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/font_reg"
-                    android:text=" kg"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_15sdp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/tree_main"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/top"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/font_reg"
-                    android:text="Equivalent to  "
+                    android:text="Equivalent to"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_14sdp" />
-
-                <TextView
-                    android:id="@+id/totalTree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/font_bold"
-                    android:text="14"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_18sdp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/font_reg"
-                    android:text=" Trees cut down"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_15sdp" />
             </LinearLayout>
-            <LinearLayout
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tree_main"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+<LinearLayout
+    android:layout_toEndOf="@+id/miannn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
 
 
-                <TextView
-                    android:id="@+id/totalDriving"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/font_bold"
-                    android:text="14"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_18sdp" />
+        <TextView
+            android:id="@+id/totalCarbon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_bold"
+            android:text="13286"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/font_reg"
-                    android:text=" km driving"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_15sdp" />
-            </LinearLayout>
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_reg"
+            android:text=" Tonne"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tree_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:id="@+id/totalTree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_bold"
+            android:text="14"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_reg"
+            android:text=" Trees cut down"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tree_main"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:id="@+id/totalDriving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_bold"
+            android:text="14"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_reg"
+            android:text=" km driving"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+    </LinearLayout>
+</LinearLayout>
+
 
         </RelativeLayout>
     </RelativeLayout>

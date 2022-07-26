@@ -85,32 +85,7 @@
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp" />
 
-                            <LinearLayout
-                                android:layout_centerVertical="true"
-                                android:layout_toEndOf="@+id/txt"
-                                android:id="@+id/calculate"
-                                android:paddingTop="@dimen/_7sdp"
-                                android:paddingBottom="@dimen/_7sdp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/btn_bg"
-                                android:gravity="center"
-                                android:paddingStart="@dimen/_10sdp"
-                                android:paddingEnd="@dimen/_10sdp">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="@dimen/_5sdp"
-                                    android:fontFamily="@font/font_reg"
-                                    android:text="Calculate"
-                                    android:textColor="@color/white" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/starticon" />
-                            </LinearLayout>
                         </RelativeLayout>
 
                     </RelativeLayout>
@@ -969,7 +944,33 @@
 
                             </LinearLayout>
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:id="@+id/calculate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/txt"
+                            android:background="@drawable/btn_bg"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_7sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_7sdp">
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:fontFamily="@font/font_reg"
+                                android:text="Calculate"
+                                android:textColor="@color/white" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/starticon" />
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"

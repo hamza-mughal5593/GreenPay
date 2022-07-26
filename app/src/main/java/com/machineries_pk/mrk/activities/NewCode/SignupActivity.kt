@@ -50,7 +50,7 @@ class SignupActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     var courses = arrayOf<String?>(
         "Select Account Type", "Green Gift Card",
-        "GreenKeeper Membership"
+        "Forest Account"
     )
     var accounttype = 0
 
