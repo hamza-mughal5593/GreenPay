@@ -201,22 +201,22 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/font_reg"
                     android:text="My carbon footprint "
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_12sdp" />
                 <TextView
-                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/font_reg"
                     android:text="Equivalent to"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_12sdp" />
             </LinearLayout>
 
 <LinearLayout
@@ -248,7 +248,7 @@
             android:fontFamily="@font/font_reg"
             android:text=" Tonne"
             android:textColor="@color/white"
-            android:textSize="@dimen/_14sdp" />
+            android:textSize="@dimen/_12sdp" />
     </LinearLayout>
 
     <LinearLayout
@@ -275,7 +275,7 @@
             android:fontFamily="@font/font_reg"
             android:text=" Trees cut down"
             android:textColor="@color/white"
-            android:textSize="@dimen/_14sdp" />
+            android:textSize="@dimen/_12sdp" />
     </LinearLayout>
     <LinearLayout
 
@@ -301,7 +301,7 @@
             android:fontFamily="@font/font_reg"
             android:text=" km driving"
             android:textColor="@color/white"
-            android:textSize="@dimen/_14sdp" />
+            android:textSize="@dimen/_12sdp" />
     </LinearLayout>
 </LinearLayout>
 

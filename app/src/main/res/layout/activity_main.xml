@@ -954,9 +954,10 @@
                             android:background="@drawable/btn_bg"
                             android:gravity="center"
                             android:paddingStart="@dimen/_10sdp"
-                            android:paddingTop="@dimen/_7sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:paddingEnd="@dimen/_10sdp"
-                            android:paddingBottom="@dimen/_7sdp">
+                           >
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -964,6 +965,7 @@
                                 android:layout_marginEnd="@dimen/_5sdp"
                                 android:fontFamily="@font/font_reg"
                                 android:text="Calculate"
+                                android:textSize="@dimen/_11sdp"
                                 android:textColor="@color/white" />
 
                             <ImageView
