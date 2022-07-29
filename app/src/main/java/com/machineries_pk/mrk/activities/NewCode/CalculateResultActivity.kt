@@ -248,7 +248,7 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
                     pro_ranking = "3"
                 }
                 in 13.1..16.5 -> {
-                    pro_name = "GreenStar"
+                    pro_name = "GreenKeeper"
                     pro_ranking = "4"
                 }
                 in 16.6..20.0 -> {
