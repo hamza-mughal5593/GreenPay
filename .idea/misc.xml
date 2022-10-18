@@ -41,6 +41,7 @@
         <entry key="app/src/main/res/drawable/search_bg.xml" value="0.2" />
         <entry key="app/src/main/res/drawable/seekbar_progress.xml" value="0.2" />
         <entry key="app/src/main/res/drawable/seekbar_style.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_calculate_result.xml" value="0.20101351351351351" />
         <entry key="app/src/main/res/layout/activity_employee_selection.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_green_card.xml" value="0.2065972222222222" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2953125" />
@@ -50,8 +51,10 @@
         <entry key="app/src/main/res/layout/activity_on_board.xml" value="0.19155405405405404" />
         <entry key="app/src/main/res/layout/activity_onboard.xml" value="0.19155405405405404" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.2065972222222222" />
+        <entry key="app/src/main/res/layout/activity_set_goal.xml" value="0.20101351351351351" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19155405405405404" />
         <entry key="app/src/main/res/layout/check_internet_dialog.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/interestlayout.xml" value="0.20033783783783785" />
         <entry key="app/src/main/res/layout/item_employee.xml" value="0.19899665551839466" />
         <entry key="app/src/main/res/layout/loading_dialog.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.19155405405405404" />

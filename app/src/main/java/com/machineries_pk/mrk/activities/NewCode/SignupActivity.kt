@@ -1,6 +1,5 @@
 package com.machineries_pk.mrk.activities.NewCode
 
-import android.R.attr
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -39,7 +38,6 @@ import android.text.TextUtils
 import android.R.attr.bitmap
 import android.graphics.Matrix
 import androidx.exifinterface.media.ExifInterface
-import com.bumptech.glide.load.resource.bitmap.TransformationUtils
 
 import com.bumptech.glide.load.resource.bitmap.TransformationUtils.rotateImage
 import com.machineries_pk.mrk.databinding.ActivitySignupBinding
@@ -70,9 +68,9 @@ class SignupActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             ) {
 
                 if (isValidEmail(binding.etEmail.text.toString())) {
-                    if (profile_img.isNotEmpty())
-                        profile_img = ""
-                    profile_img_base=""
+                    if (profile_img.isEmpty())
+                        profile_img_base = ""
+
                     signup()
                 } else {
                     Toast.makeText(
@@ -290,15 +288,15 @@ class SignupActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                         var bitmap = BitmapFactory.decodeFile(filePath, bmOptions)
                         bitmap = Bitmap.createScaledBitmap(
                             bitmap!!,
-                            bitmap.width / 2,
-                            bitmap.height / 2,
+                            400,
+                            400,
                             true
                         )
-
-                        val byteArrayOutputStream = ByteArrayOutputStream()
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
-                        var byteArray: ByteArray = byteArrayOutputStream.toByteArray()
-                        profile_img = Base64.encodeToString(byteArray, Base64.DEFAULT)
+                        decodeImageToBase64(bitmap)
+//                        val byteArrayOutputStream = ByteArrayOutputStream()
+//                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
+//                        var byteArray: ByteArray = byteArrayOutputStream.toByteArray()
+//                        profile_img = Base64.encodeToString(byteArray, Base64.DEFAULT)
 
 //                        mPaths.add(filePath)
                         binding.profileImage.setImageBitmap(bitmap)
@@ -330,6 +328,16 @@ class SignupActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     }
                 }
             })
+    }
+
+
+    private fun decodeImageToBase64(bitmap: Bitmap) {
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 75, byteArrayOutputStream)
+        val byteArray = byteArrayOutputStream.toByteArray()
+        val image =  Base64.encodeToString(byteArray, Base64.NO_WRAP)
+        profile_img = image
+
     }
 
     fun rotateImage(source: Bitmap, angle: Float): Bitmap? {

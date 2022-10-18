@@ -9,4 +9,5 @@
     <string name="how_is_your_diet">How is your <b>diet</b>?</string>
     <string name="do_you_shop_a_lot">Do you <b>shop</b> a lot?</string>
     <string name="list_emptu">Press “+” to add entry and start calculating your Carbon Emissions.</string>
+    <string name="set_my_goal">Set My \nGoal</string>
 </resources>

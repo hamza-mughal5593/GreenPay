@@ -37,11 +37,16 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.machineries_pk.mrk.R
 import com.machineries_pk.mrk.activities.MainActivity
+import com.machineries_pk.mrk.activities.Module2.SetGoalActivity
 import com.machineries_pk.mrk.activities.Utils.MySingleton
 import com.machineries_pk.mrk.activities.Utils.Utils.Companion.BASE_URL
 import com.machineries_pk.mrk.databinding.ActivityCalculateResultBinding
 import de.hdodenhof.circleimageview.CircleImageView
 import io.paperdb.Paper
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
@@ -125,7 +130,12 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
             }
             //registering popup with OnMenuItemClickListener
 
-            popup.show() //showing popup menu
+            popup.show() //showing popup mengu
+        }
+
+
+        binding.nxtBtn.setOnClickListener {
+            startActivity(Intent(this,SetGoalActivity::class.java))
         }
 
 
@@ -263,6 +273,10 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
                     pro_name = "Grower"
                     pro_ranking = "7"
                 }
+                else -> {
+                    pro_name = "N/A"
+                    pro_ranking = "0"
+                }
             }
 
 
@@ -336,9 +350,7 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
             { response ->
                 try {
 
-                    if (dialog.isShowing) {
-                        dialog.dismiss()
-                    }
+
                     val objects = JSONObject(response)
                     val response_code = objects.getInt("success")
                     if (response_code == 1) {
@@ -359,7 +371,7 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
                                     actor.getString("image"),
                                     actor.getString("lat"),
                                     actor.getString("lng"),
-                                    actor.getString("lifestyle"),
+                                    if (actor.getString("lifestyle").isNullOrEmpty()) {"0,0,0"} else {actor.getString("lifestyle")},
                                     actor.getString("name"),
                                     actor.getString("account_type")
                                 )
@@ -417,37 +429,40 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
                         val marker =
                             arrayOfNulls<Marker>(alluser.size) //change length of array according to you
 
+
+
                         mMap!!.setOnMarkerClickListener(this)
-                        for (i in 0 until alluser.size) {
+                            for (i in 0 until alluser.size) {
 
-                            // below line is use to add marker to each location of our array list.
-                            Log.e(
-                                "121212",
-                                "allusers: ${alluser.get(i).lat.toDouble()}      ${alluser.get(i).lng.toDouble()}"
-                            )
-                            marker[i] = mMap?.addMarker(
-//                            mMap?.addMarker(
-                                MarkerOptions()
-                                    .position(
-                                        LatLng(
-                                            alluser.get(i).lat.toDouble(),
-                                            alluser.get(i).lng.toDouble()
-                                        )
-                                    )
-//                                    .position(LatLng(31.5204 + i, 74.3587 + i))
-                                    .icon(
-                                        getMarkerBitmapFromView(
-                                            alluser.get(i).img,
-                                            alluser.get(i).lifestyle
-                                        )?.let {
-                                            BitmapDescriptorFactory.fromBitmap(
-                                                it
+                                // below line is use to add marker to each location of our array list.
+                                Log.e(
+                                    "121212",
+                                    "allusers: ${alluser.get(i).lat.toDouble()}      ${alluser.get(i).lng.toDouble()}"
+                                )
+                                marker[i] = mMap?.addMarker(
+                                    MarkerOptions()
+                                        .position(
+                                            LatLng(
+                                                alluser.get(i).lat.toDouble(),
+                                                alluser.get(i).lng.toDouble()
                                             )
-                                        })
-                            )
+                                        )
+//                                    .position(LatLng(31.5204 + i, 74.3587 + i))
+                                        .icon(
+                                            getMarkerBitmapFromView(
+                                                alluser.get(i).img,
+                                                alluser.get(i).lifestyle
+                                            )?.let {
+                                                BitmapDescriptorFactory.fromBitmap(
+                                                    it
+                                                )
+                                            })
+                                )
 
 
-                        }
+                            }
+
+
 
                     } else {
                         Toast.makeText(
@@ -456,10 +471,13 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
                             Toast.LENGTH_SHORT
                         ).show()
                     }
+
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }
-                dialog.dismiss()
+                if (dialog.isShowing) {
+                    dialog.dismiss()
+                }
             },
             Response.ErrorListener { volleyError ->
                 dialog.dismiss()

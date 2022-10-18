@@ -3,9 +3,6 @@ package com.machineries_pk.mrk.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.machineries_pk.mrk.R
-import android.os.CountDownTimer
-import com.machineries_pk.mrk.activities.Boarding.OnBoard
 import com.machineries_pk.mrk.activities.NewCode.LoginMainActivity
 import com.machineries_pk.mrk.databinding.ActivitySplashBinding
 import io.paperdb.Paper

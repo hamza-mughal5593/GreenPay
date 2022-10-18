@@ -26,6 +26,9 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden|adjustResize">
         <activity
+            android:name=".SetGoalActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.NewCode.ForgetPasswordActivity"
             android:exported="false" />
         <activity
@@ -45,12 +48,8 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.Boarding.OnBoard"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:exported="true"
             android:name=".activities.SplashActivity"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
