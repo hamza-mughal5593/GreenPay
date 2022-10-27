@@ -26,7 +26,21 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden|adjustResize">
         <activity
-            android:name=".SetGoalActivity"
+            android:name=".activities.Module2.HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.Module2.JoinFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Module2.GoGreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Module2.SetGoalActivity"
             android:exported="false" />
         <activity
             android:name=".activities.NewCode.ForgetPasswordActivity"
@@ -57,17 +71,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.ListActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activities.GreenCardActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activities.ProfileActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.MainActivity"
             android:exported="true"

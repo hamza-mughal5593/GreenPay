@@ -10,4 +10,11 @@
     <string name="do_you_shop_a_lot">Do you <b>shop</b> a lot?</string>
     <string name="list_emptu">Press “+” to add entry and start calculating your Carbon Emissions.</string>
     <string name="set_my_goal">Set My \nGoal</string>
+    <string name="get_monthly_easy_green_choices_go">Get monthly easy\ngreen choices, go!</string>
+    <string name="join_now"><u>Join Now</u></string>
+    <string name="female"><u>Female</u></string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

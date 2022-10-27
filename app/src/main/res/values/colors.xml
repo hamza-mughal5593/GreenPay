@@ -19,5 +19,6 @@
     <color name="graytext">#7A869A</color>
     <color name="bordercolor">#DFE1E6</color>
     <color name="graybg">#E4E4E5</color>
+    <color name="red">#F94F08</color>
 
 </resources>

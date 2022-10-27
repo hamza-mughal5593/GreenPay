@@ -37,6 +37,7 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.machineries_pk.mrk.R
 import com.machineries_pk.mrk.activities.MainActivity
+import com.machineries_pk.mrk.activities.Module2.HomeActivity
 import com.machineries_pk.mrk.activities.Module2.SetGoalActivity
 import com.machineries_pk.mrk.activities.Utils.MySingleton
 import com.machineries_pk.mrk.activities.Utils.Utils.Companion.BASE_URL
