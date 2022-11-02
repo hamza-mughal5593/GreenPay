@@ -31,7 +31,7 @@ public class ProgressBarAnimation extends Animation {
         float value = from + (to - from) * interpolatedTime;
         progressBar.setProgress((int) value);
         if (textView!=null)
-            textView.setText((int) value + " %");
+            textView.setText((int) value + "\nSteps");
 
 //            if (value == to )
 //            {

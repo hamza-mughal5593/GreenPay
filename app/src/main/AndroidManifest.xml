@@ -12,6 +12,7 @@
 
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
 
+
     <application
         android:name=".activities.Utils.AppKit"
         android:allowBackup="true"

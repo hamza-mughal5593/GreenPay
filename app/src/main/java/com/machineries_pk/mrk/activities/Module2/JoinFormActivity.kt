@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.machineries_pk.mrk.R
 import com.machineries_pk.mrk.databinding.ActivityJoinFormBinding
+import io.paperdb.Paper
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -24,6 +25,13 @@ class JoinFormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityJoinFormBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
+        binding.name.text =  Paper.book().read("name", "User Name")
+        binding.type.text =  Paper.book().read("pro_level", "")
+
+
 
         val date =
             OnDateSetListener { view, year, month, day ->

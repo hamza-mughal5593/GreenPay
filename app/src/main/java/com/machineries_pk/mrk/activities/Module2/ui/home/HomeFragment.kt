@@ -1,10 +1,7 @@
 package com.machineries_pk.mrk.activities.Module2.ui.home
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.provider.MediaStore.Audio.Media
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,10 +12,9 @@ import com.machineries_pk.mrk.R
 import com.machineries_pk.mrk.activities.Module2.Adapters.ChooseActionAdapter
 import com.machineries_pk.mrk.activities.Module2.Adapters.MediaAdapter
 import com.machineries_pk.mrk.activities.Module2.GoGreenActivity
+import com.machineries_pk.mrk.activities.Module2.HomeActivity
 import com.machineries_pk.mrk.activities.Module2.Model.ChooseModel
 import com.machineries_pk.mrk.activities.Module2.Model.MediaModel
-import com.machineries_pk.mrk.activities.NewCode.Alluser
-import com.machineries_pk.mrk.activities.NewCode.CalculateResultActivity
 import com.machineries_pk.mrk.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -35,6 +31,10 @@ class HomeFragment : Fragment() {
     var chooselist: java.util.ArrayList<ChooseModel> = java.util.ArrayList()
 
     var gender = false
+
+
+//    lateinit var  homeViewModel:HomeViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -46,12 +46,16 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
 
+
+
+
+
+
         binding.verRec.layoutManager = LinearLayoutManager(
             activity,
             LinearLayoutManager.HORIZONTAL,
             false
         )
-
         list.add(MediaModel(R.drawable.choice1, false))
         list.add(MediaModel(R.drawable.choice1, false))
         list.add(MediaModel(R.drawable.choice1, false))
@@ -112,7 +116,7 @@ class HomeFragment : Fragment() {
         c_adapter = ChooseActionAdapter(
             requireActivity(),
             chooselist
-        )
+        ) { count :Int ->  chooseitemclick(count) }
         binding.chooseRec.adapter = c_adapter
 
 
@@ -120,6 +124,10 @@ class HomeFragment : Fragment() {
 
     return root
 }
+
+    fun chooseitemclick(count : Int){
+        (activity as HomeActivity?)?.notificationsViewModel?.updateddata(count)
+    }
 
 override fun onDestroyView() {
     super.onDestroyView()

@@ -6,34 +6,39 @@
     android:layout_height="match_parent"
     android:background="#C0C2D1"
     tools:context=".activities.Module2.ui.notifications.NotificationsFragment">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_15sdp"
-        android:layout_marginStart="@dimen/_15sdp">
+        android:orientation="vertical">
 
         <RelativeLayout
-            android:paddingEnd="@dimen/_10sdp"
-            android:paddingStart="@dimen/_10sdp"
-            android:layout_marginTop="-20dp"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="-20dp"
+            android:background="@drawable/card_bg"
             android:orientation="vertical"
-            android:background="@drawable/card_bg">
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp">
 
             <TextView
+
                 android:id="@+id/anul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_30sdp"
                 android:fontFamily="@font/font_med"
                 android:text="My annual co2e"
                 android:textColor="#95989A"
                 android:textSize="@dimen/_13sdp" />
 
             <TextView
+                android:id="@+id/anual_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/anul"
@@ -41,194 +46,442 @@
                 android:text="13289,96 kg"
                 android:textColor="#95989A"
                 android:textSize="@dimen/_15sdp" />
+
             <LinearLayout
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:orientation="vertical">
+
                 <TextView
-                    android:gravity="end"
-                    android:layout_below="@+id/anul"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/anul"
+                    android:fontFamily="@font/font_med"
+                    android:gravity="end"
                     android:text="@string/make_easier_sustainable_decisions"
-                    android:textSize="@dimen/_13sdp"
-                    android:fontFamily="@font/font_med"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp" />
+
                 <TextView
-                    android:layout_gravity="end"
-                    android:gravity="end"
-                    android:layout_below="@+id/anul"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Join membership!"
-                    android:textSize="@dimen/_13sdp"
+                    android:layout_below="@+id/anul"
+                    android:layout_gravity="end"
                     android:fontFamily="@font/font_med"
-                    android:textColor="#3957D0" />
+                    android:gravity="end"
+                    android:text="Join membership!"
+                    android:textColor="#3957D0"
+                    android:textSize="@dimen/_13sdp" />
             </LinearLayout>
 
         </RelativeLayout>
 
         <TextView
-            android:layout_marginBottom="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My Impact"
-            android:textSize="@dimen/_15sdp"
-            android:fontFamily="@font/font_med"
-            android:textColor="#3957D0" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <RelativeLayout
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="wrap_content">
-
-        <RelativeLayout
-            android:id="@+id/p_main"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"
-            >
-
-            <ProgressBar
-                android:id="@+id/circularProgressbar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:indeterminate="false"
-                android:max="100"
-                android:progress="50"
-                android:progressDrawable="@drawable/circular_categories" />
-
-
-            <TextView
-                android:id="@+id/tv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="25%"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-        </RelativeLayout>
-
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/cate_name"
+            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:layout_below="@+id/p_main"
-            android:textSize="@dimen/_13sdp"
-            android:fontFamily="@font/font_bold"
-            android:textColor="@color/white"
+            android:fontFamily="@font/font_med"
+            android:text="My Impact"
+            android:textColor="#3957D0"
+            android:textSize="@dimen/_15sdp" />
+
+        <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Art"/>
-    </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:weightSum="2"
-            android:layout_height="wrap_content">
-<RelativeLayout
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_weight="1">
-    <ImageView
-        android:id="@+id/star"
-        android:src="@drawable/u_star"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_centerHorizontal="true"
-        android:id="@+id/totalact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/font_bold"
-        android:text="3"
+            android:orientation="horizontal">
 
-        android:textColor="@color/black"
-        android:textSize="@dimen/_18sdp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/totalact"
-        android:fontFamily="@font/font_med"
-        android:text="Carbon Action"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_13sdp" />
-
-
-</RelativeLayout>
             <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_width="@dimen/_105sdp"
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/tree1" />
-                <TextView
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/totaltree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/font_bold"
-                    android:text="3"
+                <RelativeLayout
+                    android:id="@+id/p_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_105sdp">
 
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
+                    <ProgressBar
+                        android:id="@+id/circularProgressbar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:indeterminate="false"
+                        android:max="4000"
+                        android:progress="1000"
+                        android:progressDrawable="@drawable/circular_categories" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/totaltree"
-                    android:fontFamily="@font/font_med"
-                    android:text="    Tree"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_13sdp" />
+
+                    <TextView
+                        android:id="@+id/stepstv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="0 \nSteps"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/font_bold"
+                        android:textSize="18sp" />
+                </RelativeLayout>
 
 
             </RelativeLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/star"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/u_star" />
+
+                        <TextView
+                            android:id="@+id/totalact"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/font_bold"
+                            android:text="0"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_18sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/totalact"
+                            android:fontFamily="@font/font_med"
+                            android:text="Carbon Action"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13sdp" />
 
 
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/tree1" />
+
+                        <TextView
+                            android:id="@+id/totaltree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/font_bold"
+                            android:text="0"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_18sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/totaltree"
+                            android:fontFamily="@font/font_med"
+                            android:text="    Tree"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13sdp" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/btn_bg"
+                    android:backgroundTint="#DFE4EC">
+
+                    <TextView
+                        android:id="@+id/level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_med"
+                        android:paddingStart="@dimen/_15sdp"
+                        android:paddingTop="@dimen/_7sdp"
+                        android:paddingEnd="@dimen/_15sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Level 1: Gardener"
+                        android:textColor="#4D5661"
+                        android:textSize="@dimen/_13sdp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="#DFE4EC"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_bg">
+            android:layout_height="wrap_content">
+
             <TextView
-                android:id="@+id/level"
+                android:id="@+id/join_now"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/font_med"
-                android:text="Level 1: Gardener"
-                android:textColor="#4D5661"
-                android:paddingTop="@dimen/_7sdp"
+                android:fontFamily="@font/font_semi"
+                android:paddingTop="@dimen/_5sdp"
                 android:paddingBottom="@dimen/_5sdp"
-                android:paddingStart="@dimen/_15sdp"
-                android:paddingEnd="@dimen/_15sdp"
-                android:textSize="@dimen/_13sdp" />
+                android:text="My Green Saving"
+                android:textColor="@color/green_color"
 
+                android:textSize="@dimen/_14sdp" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/save_ic" />
         </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_semi"
+
+                android:text="Slide to choose saving goal"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/font_semi"
+
+                android:text="$30/monthly "
+                android:textColor="@color/bluecolor"
+
+                android:textSize="@dimen/_11sdp" />
+
+        </RelativeLayout>
+
+        <SeekBar
+            android:id="@+id/euro_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:max="10000"
+            android:progressDrawable="@drawable/seekbar_style"
+            android:thumb="@drawable/custom_thumb" />
+
+        <RelativeLayout
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            android:background="@drawable/btn_bg"
+            android:backgroundTint="@color/white"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+           android:paddingTop="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_semi"
+                android:text="Green Calculator"
+                android:textColor="@color/green_color"
+                android:textSize="@dimen/_16sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@+id/km_main">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/total_spent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_semi"
+                            android:text="Spend 0€"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_reg"
+                            android:text="monthly on green"
+                            android:layout_marginEnd="@dimen/_3sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:src="@drawable/euro_bar" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/kg_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+android:id="@+id/total_kg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:fontFamily="@font/font_semi"
+                            android:text="0kg"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_reg"
+                            android:text="Saving co2"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+                    </LinearLayout>
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:src="@drawable/kg_bar" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/km_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="-25dp"
+                android:layout_toStartOf="@+id/trr"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/total_km"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_semi"
+                        android:text="0km"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_reg"
+                        android:text="mileage"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:src="@drawable/km_bar" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/trr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@id/total_tree_main"
+                android:src="@drawable/tree_bar" />
+
+            <LinearLayout
+                android:id="@+id/total_tree_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_tree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_semi"
+                    android:text="0 Tree"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_reg"
+                    android:text="Saving"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
-</LinearLayout>
-
-
-
-    </LinearLayout>
+</ScrollView>
 </LinearLayout>

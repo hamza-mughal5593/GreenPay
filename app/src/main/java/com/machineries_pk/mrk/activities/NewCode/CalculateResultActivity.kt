@@ -243,6 +243,11 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
             binding.totalTree.text = data[0]
             binding.totalCarbon.text = data[1]
             binding.totalDriving.text = data[2]
+
+            if (name == Paper.book().read("name", "")){
+                Paper.book().write("year_carbon", data[1])
+            }
+
             var total_carbon = data[1].toFloat()
 
             when (total_carbon) {
@@ -283,6 +288,10 @@ class CalculateResultActivity : AppCompatActivity(), OnMapReadyCallback,
 
         }
 
+        if (name == Paper.book().read("name", "")){
+            Paper.book().write("pro_level", pro_name)
+            Paper.book().write(" pro_ranking", pro_ranking)
+        }
 
 
         binding.progName.text = pro_name
