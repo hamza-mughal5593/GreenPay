@@ -33,7 +33,8 @@
 
 
         <RelativeLayout
-            android:layout_width="@dimen/_170sdp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
@@ -110,7 +111,7 @@
                         android:background="@android:color/transparent"
                         android:hint="First Name"
                         android:inputType="textEmailAddress"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/bluecolor" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -147,7 +148,7 @@
                         android:background="@android:color/transparent"
                         android:hint="Last Name"
                         android:inputType="textEmailAddress"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/bluecolor" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -183,7 +184,7 @@
                         android:background="@android:color/transparent"
                         android:hint="Email"
                         android:inputType="textEmailAddress"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/bluecolor" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -199,7 +200,7 @@
             android:layout_marginTop="@dimen/_20sdp"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
@@ -219,6 +220,7 @@
                        android:textSize="@dimen/_14sdp" />
 
                    <TextView
+                       android:layout_marginTop="@dimen/_10sdp"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:fontFamily="@font/font_med"
@@ -231,6 +233,7 @@
                </LinearLayout>
 
                 <LinearLayout
+                    android:layout_alignParentEnd="true"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -259,10 +262,10 @@
                 </LinearLayout>
 
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <View
-                android:layout_marginTop="@dimen/_10sdp"
+
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/bordercolor" />
@@ -279,7 +282,8 @@
             android:fontFamily="@font/font_reg"
             android:gravity="center"
             android:paddingTop="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_10sdp"
+            android:textSize="@dimen/_13sdp"
+            android:paddingBottom="@dimen/_8sdp"
             android:text="Subscribe!"
             android:textColor="@color/white" />
     </LinearLayout>

@@ -113,6 +113,8 @@ class HomeFragment : Fragment() {
         chooselist.add(ChooseModel(R.drawable.choice1,"Walk 6250steps to save  co2e", false))
 
 
+
+
         c_adapter = ChooseActionAdapter(
             requireActivity(),
             chooselist

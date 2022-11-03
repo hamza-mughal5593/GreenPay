@@ -26,7 +26,7 @@
                 android:fontFamily="@font/font_semi"
                 android:text="@string/set_my_goal"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_30sdp" />
+                android:textSize="@dimen/_25sdp" />
 
             <ImageView
                 android:layout_width="@dimen/_200sdp"
@@ -42,7 +42,7 @@
             android:fontFamily="@font/font_semi"
             android:text="My Interest"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14sdp" />
+            android:textSize="@dimen/_16sdp" />
 
         <LinearLayout
 
@@ -318,10 +318,11 @@
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_10sdp"
                 android:text="Choose Now"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_15sdp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/nextbtn"

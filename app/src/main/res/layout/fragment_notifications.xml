@@ -67,9 +67,9 @@
                     android:textSize="@dimen/_13sdp" />
 
                 <TextView
+                    android:id="@+id/joinbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/anul"
                     android:layout_gravity="end"
                     android:fontFamily="@font/font_med"
                     android:gravity="end"
@@ -97,13 +97,13 @@
             android:orientation="horizontal">
 
             <RelativeLayout
-                android:layout_width="@dimen/_105sdp"
-                android:layout_height="wrap_content">
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp">
 
                 <RelativeLayout
                     android:id="@+id/p_main"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_105sdp">
+                    android:layout_height="match_parent">
 
                     <ProgressBar
                         android:id="@+id/circularProgressbar"
@@ -112,7 +112,7 @@
                         android:layout_height="match_parent"
                         android:indeterminate="false"
                         android:max="4000"
-                        android:progress="1000"
+                        android:progress="100"
                         android:progressDrawable="@drawable/circular_categories" />
 
 
@@ -120,10 +120,10 @@
                         android:id="@+id/stepstv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/font_bold"
                         android:gravity="center"
                         android:text="0 \nSteps"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/font_bold"
                         android:textSize="18sp" />
                 </RelativeLayout>
 
@@ -143,6 +143,7 @@
                     android:weightSum="2">
 
                     <RelativeLayout
+                        android:gravity="end"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
@@ -171,19 +172,20 @@
                             android:fontFamily="@font/font_med"
                             android:text="Carbon Action"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_13sdp" />
+                            android:textSize="@dimen/_10sdp" />
 
 
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:gravity="end"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
                             android:src="@drawable/tree1" />
 
                         <TextView
@@ -191,9 +193,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
+                            android:layout_marginStart="@dimen/_15sdp"
                             android:fontFamily="@font/font_bold"
                             android:text="0"
-
                             android:textColor="@color/black"
                             android:textSize="@dimen/_18sdp" />
 
@@ -202,9 +204,9 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/totaltree"
                             android:fontFamily="@font/font_med"
-                            android:text="    Tree"
+                            android:text="               Tree"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_13sdp" />
+                            android:textSize="@dimen/_10sdp" />
 
 
                     </RelativeLayout>
@@ -213,9 +215,9 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_gravity="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:background="@drawable/btn_bg"
                     android:backgroundTint="#DFE4EC">
@@ -231,7 +233,7 @@
                         android:paddingBottom="@dimen/_5sdp"
                         android:text="Level 1: Gardener"
                         android:textColor="#4D5661"
-                        android:textSize="@dimen/_13sdp" />
+                        android:textSize="@dimen/_11sdp" />
 
 
                 </LinearLayout>
@@ -239,6 +241,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginTop="@dimen/_20sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -280,12 +283,12 @@
                 android:textSize="@dimen/_11sdp" />
 
             <TextView
+                android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:fontFamily="@font/font_semi"
-
-                android:text="$30/monthly "
+                android:text="$0/monthly"
                 android:textColor="@color/bluecolor"
 
                 android:textSize="@dimen/_11sdp" />
@@ -304,7 +307,7 @@
             android:layout_marginBottom="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_160sdp"
+            android:layout_height="@dimen/_180sdp"
             android:background="@drawable/btn_bg"
             android:backgroundTint="@color/white"
             android:paddingBottom="@dimen/_10sdp"
@@ -313,6 +316,7 @@
            android:paddingTop="@dimen/_10sdp">
 
             <TextView
+                android:layout_marginStart="@dimen/_5sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/font_semi"
@@ -327,14 +331,15 @@
                 android:layout_toStartOf="@+id/km_main">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_100sdp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="@dimen/_30sdp"
-                    android:orientation="horizontal">
+                    android:layout_marginEnd="@dimen/_40sdp"
+                    android:orientation="vertical">
 
                     <LinearLayout
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -346,32 +351,33 @@
                             android:fontFamily="@font/font_semi"
                             android:text="Spend 0€"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
+                            android:textSize="@dimen/_10sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_3sdp"
                             android:fontFamily="@font/font_reg"
                             android:text="monthly on green"
-                            android:layout_marginEnd="@dimen/_3sdp"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_10sdp" />
+                            android:textSize="@dimen/_9sdp" />
                     </LinearLayout>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
+                        android:layout_gravity="end"
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:src="@drawable/euro_bar" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/kg_main"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_60sdp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -380,14 +386,14 @@
                         android:orientation="vertical">
 
                         <TextView
-android:id="@+id/total_kg"
+                            android:id="@+id/total_kg"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:fontFamily="@font/font_semi"
                             android:text="0kg"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
+                            android:textSize="@dimen/_10sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -395,7 +401,7 @@ android:id="@+id/total_kg"
                             android:fontFamily="@font/font_reg"
                             android:text="Saving co2"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_10sdp" />
+                            android:textSize="@dimen/_9sdp" />
                     </LinearLayout>
 
                     <ImageView
@@ -411,10 +417,10 @@ android:id="@+id/total_kg"
 
             <LinearLayout
                 android:id="@+id/km_main"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_50sdp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="-25dp"
+                android:layout_marginEnd="-10dp"
                 android:layout_toStartOf="@+id/trr"
                 android:orientation="vertical">
 
@@ -430,7 +436,7 @@ android:id="@+id/total_kg"
                         android:fontFamily="@font/font_semi"
                         android:text="0km"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_11sdp" />
+                        android:textSize="@dimen/_10sdp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -438,7 +444,7 @@ android:id="@+id/total_kg"
                         android:fontFamily="@font/font_reg"
                         android:text="mileage"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_10sdp" />
+                        android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
                 <ImageView
@@ -471,7 +477,7 @@ android:id="@+id/total_kg"
                     android:fontFamily="@font/font_semi"
                     android:text="0 Tree"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_13sdp" />
+                    android:textSize="@dimen/_11sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -479,7 +485,7 @@ android:id="@+id/total_kg"
                     android:fontFamily="@font/font_reg"
                     android:text="Saving"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_12sdp" />
+                    android:textSize="@dimen/_9sdp" />
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>

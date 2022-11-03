@@ -6,7 +6,46 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+    <RelativeLayout
+        android:id="@+id/toolmain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/popupmenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/more_icon" />
+
+        <ImageView
+            android:layout_marginStart="@dimen/_10sdp"
+            android:id="@+id/back"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:tint="@color/black" />
+        <TextView
+android:layout_toEndOf="@+id/back"
+            android:id="@+id/name_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/font_semi"
+            android:text="User Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp" />
+    </RelativeLayout>
+
     <FrameLayout
+        android:layout_below="@+id/toolmain"
         android:id="@+id/nav_host_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

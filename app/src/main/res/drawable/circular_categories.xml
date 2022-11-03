@@ -1,98 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--    <item android:id="@android:id/background">-->
-    <!--        <shape-->
-    <!--            android:shape="ring"-->
-    <!--            android:innerRadius="64dp"-->
-    <!--            android:thickness="8dp"-->
-    <!--            android:useLevel="false">-->
-
-    <!--            <solid android:color="#616C7A" />-->
-    <!--        </shape>-->
-    <!--    </item>-->
-
-    <!--    <item android:id="@android:id/background">-->
-    <!--        <rotate-->
-    <!--            android:fromDegrees="270"-->
-    <!--            android:pivotX="50%"-->
-    <!--            android:pivotY="50%"-->
-    <!--            android:toDegrees="270">-->
-    <!--            <shape-->
-    <!--                android:innerRadiusRatio="2.5"-->
-    <!--                android:shape="ring"-->
-    <!--                android:thicknessRatio="12.0"-->
-    <!--                android:useLevel="true">-->
-    <!--                <rotate-->
-    <!--                    android:fromDegrees="0"-->
-    <!--                    android:pivotX="50%"-->
-    <!--                    android:pivotY="50%"-->
-    <!--                    android:toDegrees="360" />-->
-    <!--                <gradient-->
-    <!--                    android:centerColor="#616C7A"-->
-    <!--                    android:endColor="#616C7A"-->
-    <!--                    android:startColor="#616C7A"-->
-    <!--                    android:type="sweep" />-->
-    <!--            </shape>-->
-    <!--        </rotate>-->
-    <!--    </item>-->
-
-
-    <!--    <item android:id="@android:id/progress">-->
-    <!--        <rotate-->
-    <!--            android:fromDegrees="270"-->
-    <!--            android:pivotX="50%"-->
-    <!--            android:pivotY="50%"-->
-    <!--            android:toDegrees="270">-->
-    <!--            <shape-->
-    <!--                android:innerRadiusRatio="2.5"-->
-    <!--                android:shape="ring"-->
-    <!--                android:thicknessRatio="12.0"-->
-    <!--                android:useLevel="true">-->
-    <!--                <rotate-->
-    <!--                    android:fromDegrees="0"-->
-    <!--                    android:pivotX="50%"-->
-    <!--                    android:pivotY="50%"-->
-    <!--                    android:toDegrees="360" />-->
-    <!--                <gradient-->
-    <!--                    android:centerColor="@color/green_color"-->
-    <!--                    android:endColor="@color/green_color"-->
-    <!--                    android:startColor="@color/green_color"-->
-    <!--                    android:type="sweep" />-->
-    <!--            </shape>-->
-    <!--        </rotate>-->
-    <!--    </item>-->
-
-
-    <item android:id="@android:id/background">
-        <shape
-            android:innerRadius="55dp"
-            android:shape="ring"
-            android:thickness="8dp"
-            android:useLevel="false">
-
-            <solid android:color="#616C7A" />
-        </shape>
-    </item>
-
-    <item android:id="@android:id/progress">
-        <clip>
+        <item android:id="@android:id/background">
             <shape
-                android:innerRadius="52dp"
                 android:shape="ring"
-                android:thickness="14dp"
+                android:innerRadius="45dp"
+                android:thickness="8dp"
                 android:useLevel="false">
 
-                <solid android:color="@color/green_color" />
-
-                <rotate
-                    android:fromDegrees="0"
-                    android:pivotX="50%"
-                    android:pivotY="50%"
-                    android:toDegrees="360" />
+                <solid android:color="#616C7A" />
             </shape>
-        </clip>
-    </item>
+        </item>
+
+<!--        <item android:id="@android:id/background">-->
+<!--            <rotate-->
+<!--                android:fromDegrees="270"-->
+<!--                android:pivotX="50%"-->
+<!--                android:pivotY="50%"-->
+<!--                android:toDegrees="270">-->
+<!--                <shape-->
+<!--                    android:innerRadiusRatio="2.5"-->
+<!--                    android:shape="ring"-->
+<!--                    android:thicknessRatio="12.0"-->
+<!--                    android:useLevel="true">-->
+<!--                    <rotate-->
+<!--                        android:fromDegrees="0"-->
+<!--                        android:pivotX="50%"-->
+<!--                        android:pivotY="50%"-->
+<!--                        android:toDegrees="360" />-->
+<!--                    <gradient-->
+<!--                        android:centerColor="#616C7A"-->
+<!--                        android:endColor="#616C7A"-->
+<!--                        android:startColor="#616C7A"-->
+<!--                        android:type="sweep" />-->
+<!--                </shape>-->
+<!--            </rotate>-->
+<!--        </item>-->
+
+
+        <item android:id="@android:id/progress">
+            <rotate
+                android:fromDegrees="270"
+                android:pivotX="50%"
+                android:pivotY="50%"
+                android:toDegrees="270">
+                <shape
+                    android:innerRadiusRatio="2.5"
+                    android:shape="ring"
+                    android:thicknessRatio="12.0"
+                    android:useLevel="true">
+                    <rotate
+                        android:fromDegrees="0"
+                        android:pivotX="50%"
+                        android:pivotY="50%"
+                        android:toDegrees="360" />
+                    <gradient
+                        android:centerColor="@color/green_color"
+                        android:endColor="@color/green_color"
+                        android:startColor="@color/green_color"
+                        android:type="sweep" />
+                </shape>
+            </rotate>
+        </item>
+
+
+<!--    <item android:id="@android:id/background">-->
+<!--        <shape-->
+<!--            android:innerRadius="55dp"-->
+<!--            android:shape="ring"-->
+<!--            android:thickness="8dp"-->
+<!--            android:useLevel="false">-->
+
+<!--            <solid android:color="#616C7A" />-->
+<!--        </shape>-->
+<!--    </item>-->
+
+<!--    <item android:id="@android:id/progress">-->
+<!--        <clip>-->
+<!--            <shape-->
+<!--                android:innerRadius="52dp"-->
+<!--                android:shape="ring"-->
+<!--                android:thickness="14dp"-->
+<!--                android:useLevel="false">-->
+
+<!--                <solid android:color="@color/green_color" />-->
+
+<!--                <rotate-->
+<!--                    android:fromDegrees="0"-->
+<!--                    android:pivotX="50%"-->
+<!--                    android:pivotY="50%"-->
+<!--                    android:toDegrees="360" />-->
+<!--            </shape>-->
+<!--        </clip>-->
+<!--    </item>-->
 
 
 </layer-list>

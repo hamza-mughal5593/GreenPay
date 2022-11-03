@@ -1,7 +1,7 @@
 package com.machineries_pk.mrk.activities.Module2.ui.notifications
 
-import android.R
 import android.content.Context
+import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -10,17 +10,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
+import com.machineries_pk.mrk.activities.Module2.GoGreenActivity
 import com.machineries_pk.mrk.activities.Module2.HomeActivity
 import com.machineries_pk.mrk.activities.Utils.ProgressBarAnimation
 import com.machineries_pk.mrk.databinding.FragmentNotificationsBinding
 import io.paperdb.Paper
+import java.text.DecimalFormat
 
 
 class NotificationsFragment : Fragment(), SensorEventListener {
@@ -58,7 +58,10 @@ class NotificationsFragment : Fragment(), SensorEventListener {
 
 
 
-
+binding.joinbtn.setOnClickListener{
+    val intent = Intent(activity, GoGreenActivity::class.java)
+    startActivity(intent)
+}
 
         sensorManager = activity?.getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
@@ -93,9 +96,11 @@ var km_save = 0
 
                 tree_save = (co_save/560).toInt()
 
+                binding.price.text = "$progress/month"
+
 
                 binding.totalKm.text = "${km_save}km"
-                binding.totalKg.text = "${co_save}kg"
+                binding.totalKg.text = "${String.format("%.2f", co_save)}kg"
                 binding.totalSpent.text = "Spend ${progress}€"
 
                 binding.totalTree.text = "${tree_save} Tree"
