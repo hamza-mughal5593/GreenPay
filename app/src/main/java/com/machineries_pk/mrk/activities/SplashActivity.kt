@@ -3,6 +3,7 @@ package com.machineries_pk.mrk.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.machineries_pk.mrk.activities.Module2.HomeActivity
 import com.machineries_pk.mrk.activities.NewCode.LoginMainActivity
 import com.machineries_pk.mrk.databinding.ActivitySplashBinding
 import io.paperdb.Paper
@@ -17,9 +18,17 @@ class SplashActivity : AppCompatActivity() {
 
 
         binding.start.setOnClickListener {
-            val intent = Intent(this@SplashActivity, LoginMainActivity::class.java)
-            startActivity(intent)
-            finish()
+
+            val email =  Paper.book().read("email","")
+            if (email.isNotEmpty()){
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }else{
+                val intent = Intent(this@SplashActivity, LoginMainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
         }
 
 

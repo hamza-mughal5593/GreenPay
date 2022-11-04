@@ -1,12 +1,11 @@
 package com.machineries_pk.mrk.activities.Module2
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
 import com.machineries_pk.mrk.R
 import com.machineries_pk.mrk.databinding.ActivitySetGoalBinding
 
@@ -116,7 +115,9 @@ class SetGoalActivity : AppCompatActivity() , AdapterView.OnItemSelectedListener
 
         binding.nextbtn.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
+
         }
 
     }

@@ -13,6 +13,7 @@
         android:paddingEnd="@dimen/_10sdp">
 
         <ImageView
+            android:visibility="invisible"
             android:id="@+id/popupmenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -333,8 +334,8 @@
             <ImageView
 
                 android:id="@+id/nxt_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/_25sdp"
                 android:layout_marginEnd="@dimen/_10sdp"

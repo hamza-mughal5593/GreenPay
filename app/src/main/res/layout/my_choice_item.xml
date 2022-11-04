@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_marginEnd="@dimen/_10sdp"
-    android:layout_height="match_parent">
-
-    <ImageView
-
-        android:layout_marginTop="@dimen/_10sdp"
-    android:id="@+id/cho_img"
+    android:id="@+id/layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:src="@drawable/choice1"/>
+    android:layout_marginEnd="@dimen/_10sdp">
+
     <ImageView
-        android:layout_marginStart="@dimen/_10sdp"
+
+        android:id="@+id/cho_img"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/choice1" />
+
+    <ImageView
         android:id="@+id/heart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/heart_unfilled"/>
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:src="@drawable/heart_unfilled" />
 </RelativeLayout>

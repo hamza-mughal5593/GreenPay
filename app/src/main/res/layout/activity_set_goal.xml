@@ -59,8 +59,8 @@
 
                 <LinearLayout
                     android:id="@+id/bg_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:background="@drawable/unselected_bg">
@@ -92,8 +92,8 @@
 
                 <LinearLayout
                     android:id="@+id/bg_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:background="@drawable/unselected_bg">
@@ -124,8 +124,8 @@
 
                 <LinearLayout
                     android:id="@+id/bg_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:background="@drawable/unselected_bg">
@@ -156,8 +156,8 @@
 
                 <LinearLayout
                     android:id="@+id/bg_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:background="@drawable/unselected_bg">
@@ -189,8 +189,8 @@
 
                 <LinearLayout
                     android:id="@+id/bg_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:background="@drawable/unselected_bg">

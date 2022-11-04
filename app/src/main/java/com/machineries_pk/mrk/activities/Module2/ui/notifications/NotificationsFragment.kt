@@ -57,11 +57,17 @@ class NotificationsFragment : Fragment(), SensorEventListener {
         }
 
 
-
-binding.joinbtn.setOnClickListener{
-    val intent = Intent(activity, GoGreenActivity::class.java)
-    startActivity(intent)
-}
+        if (Paper.book().read("isMember", "") == "true") {
+            binding.joinbtn.visibility = View.INVISIBLE
+        }
+        binding.joinbtn.setOnClickListener {
+            if (Paper.book().read("isMember", "") == "true") {
+                Toast.makeText(activity, "Already Subscribed.", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(activity, GoGreenActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
         sensorManager = activity?.getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
@@ -76,25 +82,23 @@ binding.joinbtn.setOnClickListener{
 //        })
 
 
-
         binding.anualData.text = "${Paper.book().read("year_carbon", "0.0")} Tonne"
         binding.level.text = "Level ${Paper.book().read(" pro_ranking", 1)} : ${
             Paper.book().read("pro_level", "None")
         }"
 
 
-
-var co_save = 0.0
-var km_save = 0
+        var co_save = 0.0
+        var km_save = 0
         var tree_save = 0
 
-        binding.euroBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener{
+        binding.euroBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
 
                 co_save = progress * 1.47
                 km_save = progress * 5
 
-                tree_save = (co_save/560).toInt()
+                tree_save = (co_save / 560).toInt()
 
                 binding.price.text = "$progress/month"
 
@@ -107,9 +111,11 @@ var km_save = 0
                 binding.totaltree.text = "${tree_save}"
 
             }
+
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
 
             }
+
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
 
             }
@@ -125,11 +131,13 @@ var km_save = 0
         super.onDestroyView()
         _binding = null
     }
+
     override fun onPause() {
         super.onPause()
         running = false
         sensorManager?.unregisterListener(this)
     }
+
     override fun onResume() {
         super.onResume()
         running = true
@@ -141,9 +149,10 @@ var km_save = 0
             sensorManager?.registerListener(this, stepsSensor, SensorManager.SENSOR_DELAY_UI)
         }
     }
+
     override fun onSensorChanged(event: SensorEvent?) {
         if (event != null) {
-              if (event.values[0] > 2) {
+            if (event.values[0] > 2) {
                 stepCount++
             }
 

@@ -14,14 +14,15 @@ import com.machineries_pk.mrk.activities.Module2.Model.ChooseModel
 class ChooseActionAdapter(
     private val activity: Activity,
     private val list: ArrayList<ChooseModel>,
-    private val clicklistener: (Int) -> Unit
+    private val clicklistener: (Int, Int) -> Unit
 
 ) : RecyclerView.Adapter<ChooseActionAdapter.Holder>() {
 
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var c_img: ImageView = itemView.findViewById(R.id.c_img)
         var check: ImageView = itemView.findViewById(R.id.check)
-        var c_txt: TextView = itemView.findViewById(R.id.c_txt)
+        var s_txt: TextView = itemView.findViewById(R.id.s_txt)
+        var l_txt: TextView = itemView.findViewById(R.id.l_txt)
     }
 
     var count: Int = 0
@@ -45,6 +46,9 @@ class ChooseActionAdapter(
                     holder.check.setImageResource(R.drawable.choose_uncheck)
 
 
+                holder.s_txt.text = list[position].s_txt
+                holder.l_txt.text = list[position].l_txt
+
                 holder.check.setOnClickListener {
 
 
@@ -57,9 +61,8 @@ class ChooseActionAdapter(
                         list[position].check = true
                         holder.check.setImageResource(R.drawable.choose_check)
                     }
-                    Toast.makeText(activity, "$count", Toast.LENGTH_SHORT).show()
 
-                    clicklistener(count)
+                    clicklistener(count,position)
                 }
 
 

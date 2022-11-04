@@ -1,14 +1,11 @@
 package com.machineries_pk.mrk.activities.Module2.Adapters
 
 import android.app.Activity
-import android.content.Intent
-import android.media.MediaMetadataRetriever
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -17,15 +14,19 @@ import com.machineries_pk.mrk.R
 import com.machineries_pk.mrk.activities.Module2.Model.MediaModel
 import java.io.File
 
-class MediaAdapter (
+class MediaAdapter(
+
+    private val type: String,
     private val activity: Activity,
     private val list: ArrayList<MediaModel>,
+    private val clicklistener: (Int) -> Unit
 
 ) : RecyclerView.Adapter<MediaAdapter.Holder>() {
 
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var heart: ImageView = itemView.findViewById(R.id.heart)
         var img: ImageView = itemView.findViewById(R.id.cho_img)
+        var layout: RelativeLayout = itemView.findViewById(R.id.layout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -39,11 +40,35 @@ class MediaAdapter (
             if (position<list.size){
 
 
-                holder.img.setImageResource(list[position].img)
+
+
+
+
+
                 if (list[position].fav){
                     holder.heart.setImageResource(R.drawable.heart_filled)
                 }else
                     holder.heart.setImageResource(R.drawable.heart_unfilled)
+
+
+                if (type=="pop"){
+
+                    holder.img.setImageResource(list[position].img)
+
+
+                    holder.heart.visibility = View.VISIBLE
+                }else{
+
+
+                    if (list[position].fav){
+                        holder.img.setImageResource(list[position].img)
+                    }else{
+                        holder.img.visibility=View.GONE
+                    }
+
+                    holder.heart.visibility = View.GONE
+                }
+
 
 
                 holder.heart.setOnClickListener {
@@ -54,6 +79,9 @@ class MediaAdapter (
                         list[position].fav = true
                         holder.heart.setImageResource(R.drawable.heart_filled)
                     }
+
+                    clicklistener(position)
+
                 }
 
 

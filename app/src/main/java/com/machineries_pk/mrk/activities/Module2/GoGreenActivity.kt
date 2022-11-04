@@ -16,6 +16,7 @@ class GoGreenActivity : AppCompatActivity() {
         binding.joinNow.setOnClickListener {
             val intent = Intent(this, JoinFormActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

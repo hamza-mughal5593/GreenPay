@@ -130,6 +130,7 @@ val lifestyle = data.getString("lifestyle")
                         Paper.book().write("name",data.getString("name"))
                         Paper.book().write("account_type",data.getString("account_type"))
                         Paper.book().write("profile_image",data.getString("image"))
+                        Paper.book().write("isMember",data.getString("isMember"))
                         if (lifestyle.isNotEmpty())
                         {
                             Paper.book().write("lifestyle",lifestyle)

@@ -1,18 +1,27 @@
 package com.machineries_pk.mrk.activities.Module2
 
 import android.Manifest
+import android.app.Dialog
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Window
+import android.widget.PopupMenu
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.machineries_pk.mrk.R
+import com.machineries_pk.mrk.activities.MainActivity
 import com.machineries_pk.mrk.activities.Module2.ui.home.HomeFragment
 import com.machineries_pk.mrk.activities.Module2.ui.home.HomeViewModel
 import com.machineries_pk.mrk.activities.Module2.ui.notifications.NotificationsFragment
 import com.machineries_pk.mrk.databinding.ActivityHomeBinding
+import io.paperdb.Paper
 
 class HomeActivity : AppCompatActivity() {
 
@@ -32,6 +41,41 @@ class HomeActivity : AppCompatActivity() {
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACTIVITY_RECOGNITION) == PackageManager.PERMISSION_DENIED){
             //ask for permission
             requestPermissions( arrayOf(Manifest.permission.ACTIVITY_RECOGNITION), 0)
+        }
+
+
+      binding.nameUser.text =   Paper.book().read("name","User Name")
+        binding.back.setOnClickListener { onBackPressed() }
+
+        binding.popupmenu.setOnClickListener {
+            val popup = PopupMenu(this@HomeActivity, binding.popupmenu)
+            //Inflating the Popup using xml file
+            popup.menuInflater
+                .inflate(R.menu.popup_menu, popup.menu)
+
+            //registering popup with OnMenuItemClickListener
+            popup.setOnMenuItemClickListener { item ->
+
+                if (item.itemId == R.id.one) {
+
+                    calclut()
+
+
+                } else if (item.itemId == R.id.logout) {
+
+                    backbtn(true)
+
+
+                }
+
+
+
+
+                true
+            }
+            //registering popup with OnMenuItemClickListener
+
+            popup.show() //showing popup mengu
         }
 
 
@@ -55,14 +99,81 @@ class HomeActivity : AppCompatActivity() {
 
 
     }
+    fun backbtn(logout: Boolean) {
+        var dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.exit_dialog)
+        dialog.show()
 
-//    private fun loadFragment(fragment: Fragment) {
-//        // load fragment
-//        val transaction = supportFragmentManager.beginTransaction()
-//        transaction.replace(R.id.nav_host_frame, fragment)
-//        //        transaction.addToBackStack(null);
-//        transaction.commit()
-//    }
+
+        var cancel = dialog.findViewById<TextView>(R.id.cancel)
+        var exit = dialog.findViewById<TextView>(R.id.exit)
+        var data = dialog.findViewById<TextView>(R.id.data)
+
+        if (logout) {
+            exit.text = "Logout"
+            data.text = "Are you sure you want to Logout?"
+
+        }
+
+
+        cancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        exit.setOnClickListener {
+
+
+            dialog.dismiss()
+
+            if (logout) {
+                Paper.book().write("email", "")
+                finish()
+            } else {
+                finishAffinity()
+            }
+
+
+        }
+
+    }
+    fun calclut() {
+        var dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.exit_dialog)
+        dialog.show()
+
+
+        var cancel = dialog.findViewById<TextView>(R.id.cancel)
+        var exit = dialog.findViewById<TextView>(R.id.exit)
+        var data = dialog.findViewById<TextView>(R.id.data)
+
+
+        exit.text = "Yes"
+        data.text = "Are you sure you want to re-calculate your carbon footprints?"
+
+
+
+
+        cancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        exit.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+
+            dialog.dismiss()
+
+
+        }
+
+    }
     fun loadFragment(fragment: Fragment?, tagFragmentName: String?) {
         val mFragmentManager = supportFragmentManager
         val fragmentTransaction = mFragmentManager.beginTransaction()
